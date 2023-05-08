@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
       elevation: 30,
       alignItems: 'center',
       resizeMode: 'contain',
+      marginBottom: 20,
     },
 
     buttonIcons: {
@@ -63,18 +64,6 @@ const styles = StyleSheet.create({
       fontSize: 14,
       color: '#1D1238',
       letterSpacing: 0.5,
-    },
-
-    buttonCatalog: {
-
-    },
-
-    buttonODS: {
-
-    },
-
-    buttonReports: {
-
     },
 
   });

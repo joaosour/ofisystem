@@ -29,6 +29,7 @@ export default function Home() {
                           {backgroundColor: '#F9F9F9',
                           height: 80,
                           elevation: 0,
+                          marginBottom: 0,
                           justifyContent: 'center'}]}>
                  <Image style={styles.buttonIcons} source={require('../../assets/cart_icon.png')}/>
               </View>
@@ -40,6 +41,7 @@ export default function Home() {
                           {backgroundColor: '#F9F9F9',
                           height: 80,
                           elevation: 0,
+                          marginBottom: 0,
                           justifyContent: 'center'}]}>
                  <Image style={styles.buttonIcons} source={require('../../assets/catalog_icon.png')}/>
               </View>
@@ -51,6 +53,7 @@ export default function Home() {
                           {backgroundColor: '#F9F9F9',
                           height: 80,
                           elevation: 0,
+                          marginBottom: 0,
                           justifyContent: 'center'}]}>
                  <Image style={styles.buttonIcons} source={require('../../assets/list_icon.png')}/>
               </View>
@@ -62,6 +65,7 @@ export default function Home() {
                           {backgroundColor: '#F9F9F9',
                           height: 80,
                           elevation: 0,
+                          marginBottom: 0,
                           justifyContent: 'center'}]}>
                  <Image style={styles.buttonIcons} source={require('../../assets/report_icon.png')}/>
               </View>
