@@ -5,7 +5,7 @@ import Register from '../pages/Register'
 
 const Stack = createNativeStackNavigator();
 
-export default function Routes() {
+export default function Routes() { 
     return(
         <Stack.Navigator>
             <Stack.Screen
