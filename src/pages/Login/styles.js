@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
       height: 50,
       paddingLeft: 10,
       paddingRight: 10,
-      // backgroundColor: 'red',
     },
   
     text: {
