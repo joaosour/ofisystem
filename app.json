@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ofisystem",
+    "name": "OfiSystem",
     "slug": "ofisystem",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1D1238"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,23 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#1D1238"
+      },
+      "package": "com.joaosour.ofisystem"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f735fd1b-eae0-4cc1-9ee7-b987698f798f"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f735fd1b-eae0-4cc1-9ee7-b987698f798f"
     }
   }
 }
