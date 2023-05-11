@@ -1,6 +1,6 @@
 import styles from './styles.js'
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
@@ -9,10 +9,23 @@ export default function Home() {
  return (
    <View style = {styles.container}>
 
-        <Animatable.Image style={styles.containerLogo}
-          source={require('../../assets/home_top.png')}
-        />
+        <View style={styles.containerHeader}>
 
+          <View style={styles.headerLeft}>
+              <Image style={styles.headerLeftImg} source={require('../../assets/options_icon.png')}/>
+          </View>
+
+          <View style={styles.headerCenter}>
+            <Image style={styles.headerCenterImg} source={require('../../assets/home_top.png')}/> 
+          </View>
+
+          <View style={styles.headerRight}>
+              <Image style={styles.headerRightImg} source={require('../../assets/person_icon.png')}/>
+              <Text style={styles.headerRightText}>Leandro</Text>
+          </View>
+
+        </View>
+        
         <Animatable.View
           animation="slideInUp"
           style={styles.containerForm}

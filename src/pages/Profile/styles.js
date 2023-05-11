@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
     containerLogo: {
       width: 190,
       height: 48,
+      justifyContent: 'center',
       marginTop: 10,
       marginBottom: 20,
-      justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
       resizeMode: 'contain',

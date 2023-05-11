@@ -4,21 +4,8 @@ import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} f
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import { ScrollView } from 'react-native';
-// import database from '../../config/firebaseconfig'
 
-export default function Login() {
-
-  // const [task, setTask] = useState([])
-
-  // useEffect(()=>{
-  //   database.collection("users").onSnapshot((query)=>{
-  //     const list = []
-  //     query.forEach((doc)=>{
-  //       list.push({...doc.data(), id: doc.id})
-  //     })
-  //     setTask(list)
-  //   })
-  // }, [])
+export default function Profile() {
 
   const navigation = useNavigation();
   const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
@@ -92,7 +79,7 @@ export default function Login() {
                 onBlur={handleBlurInput2} 
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
-                source={require('../../assets/eye_open.png')}
+                source={require('../../assets/perfil_top.png')}
               />
 
             </View>

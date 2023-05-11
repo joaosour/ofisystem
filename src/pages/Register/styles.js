@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       alignSelf: 'center',
       resizeMode: 'contain',
-      marginBottom: 21,
+      marginTop: 10,
+      marginBottom: 20,
     },
   
     containerForm: {
