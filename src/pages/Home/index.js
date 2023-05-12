@@ -20,7 +20,7 @@ export default function Home() {
           </View>
 
           <View style={styles.headerRight}>
-              <Image style={styles.headerRightImg} source={require('../../assets/person_icon.png')}/>
+              <Image style={styles.headerRightImg} source={require('../../assets/person_icon_white.png')}/>
               <Text style={styles.headerRightText}>Leandro</Text>
           </View>
 

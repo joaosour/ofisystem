@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   },
 
   containerHeader: {
+    // backgroundColor: 'green',
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: 48,
@@ -18,26 +19,26 @@ const styles = StyleSheet.create({
   
   headerLeft: {
     flexDirection: 'row',
-    backgroundColor: 'blue',
-    height: 50,
-    width: 50,
+    // backgroundColor: 'blue',
+    height: 48,
+    width: 70,
   },
 
   headerLeftImg: {
-    height: 20,
+    height: 15,
     width: 20,
   },
 
   headerCenter: {
-    backgroundColor: 'red',
-    height: 50,
-    width: 200,
+    // backgroundColor: 'red',
+    height: 48,
+    width: '10%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   
   headerCenterImg: {
-    backgroundColor: 'purple',
+    // backgroundColor: 'purple',
     height: 48,
     width: 190,
     resizeMode: 'contain',
@@ -46,22 +47,22 @@ const styles = StyleSheet.create({
   headerRight: {
     flexDirection: 'row-reverse',
     backgroundColor: 'green',
-    height: 50,
-    width: 50,
+    height: 20,
+    width: 70,
     alignItems: 'flex-end',
   },
 
   headerRightText: {
     flex: 1,
+    fontSize: 12,
+    color: 'white',
     backgroundColor: 'blue',
-    height: '100%',
-    width: 50,
-  },
+    },
 
   headerRightImg: {
     backgroundColor: 'yellow',
-    height: 20,
-    width: 20,
+    height: 17,
+    width: 12,
   },
 
   containerForm: {
