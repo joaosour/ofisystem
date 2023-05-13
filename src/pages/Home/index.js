@@ -21,7 +21,7 @@ export default function Home() {
 
           <View style={styles.headerRight}>
               <Image style={styles.headerRightImg} source={require('../../assets/person_icon_white.png')}/>
-              <Text style={styles.headerRightText}>Leandro</Text>
+              <Text style={styles.headerRightText}>LeandroLeandro</Text>
           </View>
 
         </View>
@@ -37,49 +37,29 @@ export default function Home() {
 
           <View style={styles.containerCards}>
             
-            <TouchableOpacity style={styles.buttonCards}>
-              <View style={[styles.buttonCards,
-                          {backgroundColor: '#F9F9F9',
-                          height: 80,
-                          elevation: 0,
-                          marginBottom: 0,
-                          justifyContent: 'center'}]}>
+            <TouchableOpacity style={styles.buttonCardsA}>
+              <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/cart_icon.png')}/>
               </View>
               <Text style={styles.buttonTexts}>Vendas</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.buttonCards}>
-              <View style={[styles.buttonCards,
-                          {backgroundColor: '#F9F9F9',
-                          height: 80,
-                          elevation: 0,
-                          marginBottom: 0,
-                          justifyContent: 'center'}]}>
+            <TouchableOpacity style={styles.buttonCardsA}>
+              <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/catalog_icon.png')}/>
               </View>
               <Text style={styles.buttonTexts}>Catálogo</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.buttonCards}>
-              <View style={[styles.buttonCards,
-                          {backgroundColor: '#F9F9F9',
-                          height: 80,
-                          elevation: 0,
-                          marginBottom: 0,
-                          justifyContent: 'center'}]}>
+            <TouchableOpacity style={styles.buttonCardsA}>
+              <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/list_icon.png')}/>
               </View>
               <Text style={styles.buttonTexts}>Catálogo</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.buttonCards}>
-              <View style={[styles.buttonCards,
-                          {backgroundColor: '#F9F9F9',
-                          height: 80,
-                          elevation: 0,
-                          marginBottom: 0,
-                          justifyContent: 'center'}]}>
+            <TouchableOpacity style={styles.buttonCardsA}>
+              <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/report_icon.png')}/>
               </View>
               <Text style={styles.buttonTexts}>Catálogo</Text>

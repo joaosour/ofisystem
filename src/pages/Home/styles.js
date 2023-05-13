@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 
   headerCenter: {
-    // backgroundColor: 'red',
+    backgroundColor: 'red',
     height: 48,
     width: '10%',
     alignItems: 'center',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   
   headerCenterImg: {
-    // backgroundColor: 'purple',
+    backgroundColor: 'purple',
     height: 48,
     width: 190,
     resizeMode: 'contain',
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
 
   headerRightText: {
     flex: 1,
+    height: '71%',
     fontSize: 12,
     color: 'white',
     backgroundColor: 'blue',
@@ -77,9 +78,10 @@ const styles = StyleSheet.create({
   
   containerCards: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    flexWrap: 'wraP',
+    // justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: 'red'
   },
   
     smallLine: {
@@ -92,16 +94,27 @@ const styles = StyleSheet.create({
       marginBottom: 15,
     },
   
-  buttonCards: {
+  buttonCardsA: {
     width: 155,
     height: 110,
     backgroundColor: '#FFF',
     borderRadius: 21,
     shadowColor: '#C1C1C1',
-    elevation: 30,
+    // elevation: 30,
+    alignItems: 'center',
+    // resizeMode: 'contain',
+    // marginBottom: 20,
+  },
+  
+  buttonCardsB: {
+    width: 155,
+    height: 80,
+    backgroundColor: '#F9F9F9',
+    borderRadius: 21,
+    // shadowColor: '#C1C1C1',
     alignItems: 'center',
     resizeMode: 'contain',
-    marginBottom: 20,
+    justifyContent: 'center',
   },
 
   buttonIcons: {
