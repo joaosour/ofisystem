@@ -67,7 +67,7 @@ const navigation = useNavigation();
               </View>
 
               <View style={styles.containerDescription}>
-                <Text style={styles.textDescription}>Modelos de suportes para bikes infantis, juvenis e tamanho adulto, regulagem dupla e a quatro pinos.</Text>
+                <Text style={styles.textDescription}>Modelos de garfos com pistão de 90mm para bikes médias e adultas.</Text>
                 <Text style={styles.modelDescription}>Modelos:</Text>
                 <View style={styles.containerBottomDescription}>
                   <Text style={styles.amountDescription}>12</Text>
@@ -87,7 +87,7 @@ const navigation = useNavigation();
               </View>
 
               <View style={styles.containerDescription}>
-                <Text style={styles.textDescription}>Modelos de suportes para bikes infantis, juvenis e tamanho adulto, regulagem dupla e a quatro pinos.</Text>
+                <Text style={styles.textDescription}>Modelos de guidãos para cross, mountain bike e biclietas casuais.</Text>
                 <Text style={styles.modelDescription}>Modelos:</Text>
                 <View style={styles.containerBottomDescription}>
                   <Text style={styles.amountDescription}>17</Text>
