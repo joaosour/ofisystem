@@ -78,12 +78,15 @@ export default function Register() {
           />
 
         <Modal visible={isVisible} transparent={true} animationType="fade">
-            <View style={styles.modalContent}>
+          <View style={styles.modalBackground}>
+          <View style={styles.modalContent}>
               <Text style={styles.modalText}>Usuário cadastrado com sucesso!</Text>
             </View>
 
-            <TouchableOpacity style = {[styles.button, {top: 278}]} onPress={ () => navigation.navigate('Login')} >
-            <Text style = {styles.buttonText} >IR PARA O LOGIN</Text>
+
+          </View>
+          <TouchableOpacity style = {styles.buttonBack} onPress={ () => navigation.navigate('Login')} >
+             <Text style = {styles.buttonText} >IR PARA O LOGIN</Text>
           </TouchableOpacity>
         </Modal>
 

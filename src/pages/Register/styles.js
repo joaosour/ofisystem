@@ -2,18 +2,31 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
 
-    modalContent: {
+    modalBackground: {
+      backgroundColor: 'white',
       marginLeft: 30,
       marginRight: 30,
       width: '80%',
-      height: 310,
+      height: 330,
+      // backgroundColor: 'red',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      alignSelf: 'center',
+      top: 270,
+    },
+
+    modalContent: {
+      // marginLeft: 30,
+      // marginRight: 30,
+      // width: '73%',
+      height: 250,
       backgroundColor: 'white',
       padding: 25,
       borderRadius: 25,
       alignItems: 'center',
       justifyContent: 'center',
       alignSelf: 'center',
-      top: 270,
+      top: 40,
       borderWidth: 1,
       borderColor: '#1D1238',
     },
@@ -137,6 +150,22 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
     },
+    
+    buttonBack: {
+      top: 267,
+      backgroundColor: '#1D1238',
+      height: 50,
+      width: 270,
+      fontSize: 16,
+      marginTop: 15,
+      marginBottom: 7,
+      marginLeft: 30,
+      marginRight: 30,
+      borderRadius: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'center',
+    },
   
     button: {
       backgroundColor: '#1D1238',
@@ -149,10 +178,10 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       alignItems: 'center',
       justifyContent: 'center',
-  
     },
   
     buttonText: {
+      // width: '80%',
       fontSize: 13,
       color: '#FFF',
       fontWeight: 'bold'

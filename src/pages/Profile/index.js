@@ -10,6 +10,7 @@ export default function Profile() {
   const navigation = useNavigation();
   const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
   const [IsFocusedInput2, setIsFocusedInput2] = useState(false)
+  const [IsFocusedInput3, setIsFocusedInput3] = useState(false)
 
   const handleFocusInput1 = () => {
     setIsFocusedInput1(true);
@@ -23,9 +24,16 @@ export default function Profile() {
   const handleBlurInput2 = () => {
     setIsFocusedInput2(false);
   }
+  const handleFocusInput3 = () => {
+    setIsFocusedInput3(true);
+  }
+  const handleBlurInput3 = () => {
+    setIsFocusedInput3(false);
+  }
 
   const inputStyle1 = IsFocusedInput1? styles.inputContainerFocused : styles.inputContainer;
   const inputStyle2 = IsFocusedInput2? styles.inputContainerFocused : styles.inputContainer;
+  const inputStyle3 = IsFocusedInput3? styles.inputContainerFocused : styles.inputContainer;
 
  return (
    <View style = {styles.container}>
@@ -90,7 +98,7 @@ export default function Profile() {
             </View>
 
           <Text style={styles.inputTitle}>Data de nascimento</Text>
-            <View style={inputStyle2}>
+            <View style={inputStyle3}>
               <Image style={styles.inputImage}
                 source={require('../../assets/calendar_icon.png')}
               />
@@ -98,12 +106,11 @@ export default function Profile() {
                 placeholder='Digite sua data de nascimento'
                 placeholderTextColor='#B1B1B1'
                 style={styles.input}
-                onFocus={handleFocusInput2}
-                onBlur={handleBlurInput2} 
+                onFocus={handleFocusInput3}
+                onBlur={handleBlurInput3} 
                 />
 
             </View>
-            
             
           <TouchableOpacity style = {styles.button} onPress={ () => navigation.navigate('Home')}>
             <Text style = {styles.buttonText}>CONFIRMAR ALTERAÇÃO</Text>
