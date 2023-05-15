@@ -4,6 +4,7 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
+import Catalog from '../pages/Catalog'
 
 
 const Stack = createNativeStackNavigator();
@@ -33,6 +34,11 @@ export default function Routes() {
             <Stack.Screen
                 name="Profile"
                 component={Profile}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Catalog"
+                component={Catalog}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>

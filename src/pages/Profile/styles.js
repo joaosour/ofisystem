@@ -16,6 +16,48 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       resizeMode: 'contain',
     },
+
+    containerProfile: {
+      flexDirection: 'row',
+      height: 120,
+      // backgroundColor: 'grreen',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 10,
+      marginBottom: 40,
+      
+    },
+    
+    circleProfile: {
+      height: 120,
+      width: 120,
+      backgroundColor: '#1D1238',
+      borderRadius: 80,
+      resizeMode: 'contain',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
+      imageProfile: {
+      flex: 1,
+      width: '70%',
+      height: '70%',
+      resizeMode: 'contain',
+      justifyContent: 'center',
+      alignItems: 'center',
+      // backgroundColor: 'blue'
+    },
+
+    nameProfile: {
+      fontSize: 14,
+      color: '#1D1238',
+      fontWeight: '900',
+    },
+
+    functionProfile: {
+      fontSize: 14,
+      color: '#1D1238',
+    },
   
     containerForm: {
       flex: 1,

@@ -16,6 +16,13 @@ const styles = StyleSheet.create({
     marginLeft: 14,
     marginRight: 14,
   },
+
+  titleCards:{
+    fontSize: 22,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 10,
+  },
   
   headerLeft: {
     flexDirection: 'row',
@@ -82,12 +89,56 @@ const styles = StyleSheet.create({
     paddingEnd: '5%',
   },
   
-  containerCards: {
+  containerDescription: {
+    flex: 1,
+    flexDirection: 'column',
+    // backgroundColor: 'green',
+    marginLeft: 54,
+  },
+
+  containerBottomDescription: {
+    width: '100%',
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    // backgroundColor: 'red',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-end',
+    bottom: 5,
+  },
+
+  textDescription: {
+    flex: 1,
+    fontSize: 12,
+    color: '#8F9297',
+    marginLeft: 6,
+    paddingRight: 5,
+  },
+
+  modelDescription: {
+    fontSize: 15,
+    color: '#1D1238',
+    marginLeft: 6,
+    fontWeight: '900',
+    // marginBottom: -5,
+    // backgroundColor: 'blue'
+  },
+
+  amountDescription: {
+    // backgroundColor: 'red',
+    fontSize: 25,
+    color: '#FF7B02',
+    marginLeft: 6,
+    fontWeight: '900',
+    // marginTop: -8,
+    // marginBottom: 5,
+    // lineHeight: 40,
+  },
+
+  containerCards: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    // alignItems: 'center',
     // backgroundColor: 'red'
+    marginBottom: -10,
   },
   
     smallLine: {
@@ -101,32 +152,35 @@ const styles = StyleSheet.create({
     },
   
   buttonCardsA: {
-    width: 155,
+    flexDirection: 'row',
+    width: '100%',
     height: 110,
     backgroundColor: '#FFF',
     borderRadius: 21,
     shadowColor: '#C1C1C1',
     elevation: 30,
-    alignItems: 'center',
+    // alignItems: 'center',
     resizeMode: 'contain',
     marginBottom: 20,
   },
   
   buttonCardsB: {
-    width: 155,
-    height: 80,
+    width: 80,
+    height: 110,
     backgroundColor: '#F9F9F9',
     borderRadius: 21,
-    shadowColor: '#C1C1C1',
+    // shadowColor: '#C1C1C1',
     alignItems: 'center',
-    resizeMode: 'contain',
-    justifyContent: 'center',
+    // resizeMode: 'contain',
+    // justifyContent: 'center',
   },
 
-  buttonIcons: {
-    width: '100%',
+  buttonImage: {
+    marginLeft: 30,
+    width: '200%',
     height: '100%',
-    resizeMode: 'center',
+    resizeMode: 'center'
+    // resizeMode: 'center',
     // backgroundColor: 'red'
   },
 
@@ -136,6 +190,27 @@ const styles = StyleSheet.create({
     color: '#1D1238',
     letterSpacing: 0.5,
   },
+
+  buttonSee: {
+    fontSize: 50,
+    backgroundColor: '#FFF6ED',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#FF7B02',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+  },
+
+  buttonSeeFont: {
+    fontSize: 12,
+    color: '#FF7B02'
+  }
 
 });
 

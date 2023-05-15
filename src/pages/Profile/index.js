@@ -30,7 +30,7 @@ export default function Profile() {
  return (
    <View style = {styles.container}>
           <Animatable.Image style={styles.containerLogo}
-            source={require('../../assets/ofisystem_text_top.png')}
+            source={require('../../assets/perfil_top.png')}
           />
 
         <Animatable.View
@@ -39,16 +39,21 @@ export default function Profile() {
         easing={'ease-out-back'}
         duration={1000}
         direction='alternate'
->
-        
-          <View style={styles.smallLine}></View>
-          <Text style={styles.title}>Cadastrar usuário!</Text>
-          <Text style={styles.text}>Insira os dados do novo usuário abaixo</Text>
-          <Image
-            style={styles.logoIcon}
-            resizeMode='contain'
-            source={require('../../assets/ofisystem_logo_icon.png')}
-          />
+        >
+
+        <View style={styles.smallLine}></View>
+
+        <View style={styles.containerProfile}>
+          <View style={styles.circleProfile}>
+            <Image style={styles.imageProfile} source={require('../../assets/photo_profile_user.png')}/>
+          </View>
+          <View>
+            <Text style={styles.nameProfile}>Leandro de Oliveira!</Text>
+            <Text style={styles.functionProfile}>Funcionário</Text>
+          </View>
+          <Image style={{width: 17, height: 17, marginBottom: 20}}source={require('../../assets/edit_icon.png')}/>
+        </View>
+
         <ScrollView showsVerticalScrollIndicator={false}>
 
           <Text style={styles.inputTitle}>Usuário</Text>
@@ -79,31 +84,32 @@ export default function Profile() {
                 onBlur={handleBlurInput2} 
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
-                source={require('../../assets/perfil_top.png')}
+                source={require('../../assets/eye_open.png')}
               />
+
+            </View>
+
+          <Text style={styles.inputTitle}>Data de nascimento</Text>
+            <View style={inputStyle2}>
+              <Image style={styles.inputImage}
+                source={require('../../assets/calendar_icon.png')}
+              />
+              <TextInput
+                placeholder='Digite sua data de nascimento'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2} 
+                />
 
             </View>
             
             
           <TouchableOpacity style = {styles.button} onPress={ () => navigation.navigate('Home')}>
-            <Text style = {styles.buttonText}>ENTRAR</Text>
+            <Text style = {styles.buttonText}>CONFIRMAR ALTERAÇÃO</Text>
           </TouchableOpacity>
-
-          <View style={styles.registerOptions}>
-            <TouchableOpacity>
-              <Text style={styles.registerOptionsText}>Esqueceu senha?</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={ () => navigation.navigate('Register')}>
-              <Text style={styles.registerOptionsText}>Registrar</Text>
-            </TouchableOpacity>
-          </View>
           </ScrollView>
         </Animatable.View>
-        
-          <View style={styles.navigationBar}>
-          
-          </View>
 
    </View>
   );

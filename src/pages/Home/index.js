@@ -6,23 +6,25 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function Home() {
 
+const navigation = useNavigation();
+
  return (
    <View style = {styles.container}>
 
         <View style={styles.containerHeader}>
 
-          <View style={styles.headerLeft}>
+          <TouchableOpacity style={styles.headerLeft}>
               <Image style={styles.headerLeftImg} source={require('../../assets/options_icon.png')}/>
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.headerCenter}>
             <Image style={styles.headerCenterImg} source={require('../../assets/home_top.png')}/> 
           </View>
 
-          <View style={styles.headerRight}>
+          <TouchableOpacity style={styles.headerRight} onPress={ () => navigation.navigate('Profile')}>
               <Image style={styles.headerRightImg} source={require('../../assets/person_icon_white.png')}/>
-              <Text style={styles.headerRightText}>LeandroLeandro</Text>
-          </View>
+              <Text style={styles.headerRightText}>Leandro Sousa</Text>
+          </TouchableOpacity>
 
         </View>
         
@@ -44,7 +46,7 @@ export default function Home() {
               <Text style={styles.buttonTexts}>Vendas</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.buttonCardsA}>
+            <TouchableOpacity style={styles.buttonCardsA} onPress={ () => navigation.navigate('Catalog')}>
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/catalog_icon.png')}/>
               </View>
@@ -55,7 +57,7 @@ export default function Home() {
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/list_icon.png')}/>
               </View>
-              <Text style={styles.buttonTexts}>Catálogo</Text>
+              <Text style={styles.buttonTexts}>Ordem de serviço</Text>
             </TouchableOpacity>
             
             <TouchableOpacity style={styles.buttonCardsA}>

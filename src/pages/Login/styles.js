@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
   
     containerLogo: {
-      backgroundColor: 'green',
+      // backgroundColor: 'green',
       width: 190,
       height: 48,
       marginTop: 10,
