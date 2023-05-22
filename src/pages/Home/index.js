@@ -64,7 +64,7 @@ const navigation = useNavigation();
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/report_icon.png')}/>
               </View>
-              <Text style={styles.buttonTexts}>Catálogo</Text>
+              <Text style={styles.buttonTexts}>Relatório</Text>
             </TouchableOpacity>
 
           </View>

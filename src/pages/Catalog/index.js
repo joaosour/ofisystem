@@ -51,7 +51,7 @@ const navigation = useNavigation();
                 <Text style={styles.modelDescription}>Modelos:</Text>
                 <View style={styles.containerBottomDescription}>
                   <Text style={styles.amountDescription}>15</Text>
-                  <TouchableOpacity style={styles.buttonSee}>
+                  <TouchableOpacity style={styles.buttonSee} onPress={ () => navigation.navigate('CatalogA')}>
                     <Text style={styles.buttonSeeFont}>Ver</Text>
                   </TouchableOpacity>
                 </View>
