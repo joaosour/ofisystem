@@ -4,8 +4,21 @@ import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} f
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import { ScrollView } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function Profile() {
+
+  const [user, setUser]=useState(null);
+
+useEffect(()=> {
+  async function getUser()
+  {
+    let response=await AsyncStorage.getItem('userData');
+    let json=JSON.parse(response);
+    setUser(json.name);
+  }
+  getUser();
+}, [])
 
   const navigation = useNavigation();
   const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
@@ -56,7 +69,7 @@ export default function Profile() {
             <Image style={styles.imageProfile} source={require('../../assets/photo_profile_user.png')}/>
           </View>
           <View>
-            <Text style={styles.nameProfile}>Leandro de Oliveira!</Text>
+            <Text style={styles.nameProfile}>{user}</Text>
             <Text style={styles.functionProfile}>Funcionário</Text>
           </View>
           <Image style={{width: 17, height: 17, marginBottom: 20}}source={require('../../assets/edit_icon.png')}/>
@@ -89,7 +102,8 @@ export default function Profile() {
                 placeholderTextColor='#B1B1B1'
                 style={styles.input}
                 onFocus={handleFocusInput2}
-                onBlur={handleBlurInput2} 
+                onBlur={handleBlurInput2}
+                secureTextEntry={true}  
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}

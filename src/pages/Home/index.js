@@ -3,10 +3,25 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function Home() {
 
 const navigation = useNavigation();
+
+const [user, setUser]=useState(null);
+
+useEffect(()=> {
+  async function getUser()
+  {
+    let response=await AsyncStorage.getItem('userData');
+    let json=JSON.parse(response);
+    setUser(json.name);
+  }
+  getUser();
+}, [])
+
+
 
  return (
    <View style = {styles.container}>
@@ -23,7 +38,7 @@ const navigation = useNavigation();
 
           <TouchableOpacity style={styles.headerRight} onPress={ () => navigation.navigate('Profile')}>
               <Image style={styles.headerRightImg} source={require('../../assets/person_icon_white.png')}/>
-              <Text style={styles.headerRightText}>Leandro Sousa</Text>
+              <Text style={styles.headerRightText}>{user}</Text>
           </TouchableOpacity>
 
         </View>
@@ -64,7 +79,7 @@ const navigation = useNavigation();
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/report_icon.png')}/>
               </View>
-              <Text style={styles.buttonTexts}>Catálogo</Text>
+              <Text style={styles.buttonTexts}>Relatórios</Text>
             </TouchableOpacity>
 
           </View>

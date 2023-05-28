@@ -3,10 +3,23 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView} from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function Catalog() {
 
 const navigation = useNavigation();
+
+const [user, setUser]=useState(null);
+
+useEffect(()=> {
+  async function getUser()
+  {
+    let response=await AsyncStorage.getItem('userData');
+    let json=JSON.parse(response);
+    setUser(json.name);
+  }
+  getUser();
+}, [])
 
  return (
    <View style = {styles.container}>
@@ -23,7 +36,7 @@ const navigation = useNavigation();
 
           <TouchableOpacity style={styles.headerRight} onPress={ () => navigation.navigate('Profile')}>
               <Image style={styles.headerRightImg} source={require('../../assets/person_icon_white.png')}/>
-              <Text style={styles.headerRightText}>Leandro Sousa</Text>
+              <Text style={styles.headerRightText}>{user}</Text>
           </TouchableOpacity>
 
         </View>
@@ -51,7 +64,7 @@ const navigation = useNavigation();
                 <Text style={styles.modelDescription}>Modelos:</Text>
                 <View style={styles.containerBottomDescription}>
                   <Text style={styles.amountDescription}>15</Text>
-                  <TouchableOpacity style={styles.buttonSee}>
+                  <TouchableOpacity style={styles.buttonSee} onPress={ () => navigation.navigate('CatalogA')}>
                     <Text style={styles.buttonSeeFont}>Ver</Text>
                   </TouchableOpacity>
                 </View>

@@ -5,6 +5,7 @@ import Register from '../pages/Register'
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
 import Catalog from '../pages/Catalog'
+import CatalogA from '../pages/CatalogA'
 
 
 const Stack = createNativeStackNavigator();
@@ -39,6 +40,11 @@ export default function Routes() {
             <Stack.Screen
                 name="Catalog"
                 component={Catalog}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="CatalogA"
+                component={CatalogA}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>

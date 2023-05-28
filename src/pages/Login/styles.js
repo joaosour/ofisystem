@@ -149,6 +149,13 @@ const styles = StyleSheet.create({
       fontWeight: '900',
   
     },
+    login_msg: (text='none')=>({
+      fontSize: 25,
+      fontWeight: 'bold',
+      color: 'red',
+      display: text,
+      alignSelf: 'center',
+    }),
   
   });
 

@@ -1,9 +1,10 @@
 import styles from './styles.js'
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native';
-import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native'
+import * as Animatable from 'react-native-animatable';
+import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 // import database from '../../config/firebaseconfig'
 
 export default function Login() {
@@ -36,6 +37,43 @@ export default function Login() {
   const handleBlurInput2 = () => {
     setIsFocusedInput2(false);
   }
+  const [display, setDisplay]=useState('none');
+  const [user, setUser]=useState(null);
+  const [password, setPassword]=useState(null);
+  const [login, setLogin]=useState(null);
+
+  //Envio do formulário de login para backend
+
+  async function sendForm()
+  {
+    
+    let response=await fetch('http://192.168.1.11:3000/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: user,
+        password: password
+      })
+    });
+    let json=await response.json();
+        if(json === 'error'){
+            setDisplay('flex');
+            setTimeout(()=>{
+                setDisplay('none');
+            },2000);
+            await AsyncStorage.clear();
+        } else {
+         
+            let userData=await AsyncStorage.setItem('userData', JSON.stringify(json));
+            navigation.navigate('Home');
+        }
+  } 
+  
+
+
 
   const inputStyle1 = IsFocusedInput1? styles.inputContainerFocused : styles.inputContainer;
   const inputStyle2 = IsFocusedInput2? styles.inputContainerFocused : styles.inputContainer;
@@ -63,6 +101,7 @@ export default function Login() {
             source={require('../../assets/ofisystem_logo_icon.png')}
           />
         <ScrollView showsVerticalScrollIndicator={false}>
+        
 
           <Text style={styles.inputTitle}>Usuário</Text>
             <View style={inputStyle1}>
@@ -75,9 +114,11 @@ export default function Login() {
                 style={styles.input}
                 onFocus={handleFocusInput1}
                 onBlur={handleBlurInput1} 
+                onChangeText={text=>setUser(text)}
                 />
 
             </View>
+            
 
           <Text style={styles.inputTitle}>Senha</Text>
             <View style={inputStyle2}>
@@ -89,7 +130,9 @@ export default function Login() {
                 placeholderTextColor='#B1B1B1'
                 style={styles.input}
                 onFocus={handleFocusInput2}
-                onBlur={handleBlurInput2} 
+                onBlur={handleBlurInput2}
+                secureTextEntry={true} 
+                onChangeText={text=>setPassword(text)}
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}
@@ -98,25 +141,29 @@ export default function Login() {
             </View>
             
             
-          <TouchableOpacity style = {styles.button} onPress={ () => navigation.navigate('Home')}>
+          <TouchableOpacity style = {styles.button} onPress={ () => sendForm()}>
             <Text style = {styles.buttonText}>ENTRAR</Text>
           </TouchableOpacity>
-
+          <View>
+              <Text style={styles.login_msg(display)}>Usuário e/ou Senha Inválidos</Text>
+            </View>
           <View style={styles.registerOptions}>
             <TouchableOpacity>
               <Text style={styles.registerOptionsText}>Esqueceu senha?</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={ () => navigation.navigate('Register')}>
+            <TouchableOpacity onPress={ () => navigation.navigate('Register')}>   
               <Text style={styles.registerOptionsText}>Registrar</Text>
             </TouchableOpacity>
           </View>
+          
           </ScrollView>
         </Animatable.View>
         
           <View style={styles.navigationBar}>
           
           </View>
+          
 
    </View>
   );

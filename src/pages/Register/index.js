@@ -117,7 +117,8 @@ export default function Register() {
                 placeholderTextColor='#B1B1B1'
                 style={styles.input}
                 onFocus={handleFocusInput2}
-                onBlur={handleBlurInput2} 
+                onBlur={handleBlurInput2}
+                secureTextEntry={true}  
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}
@@ -153,12 +154,15 @@ export default function Register() {
                 style={styles.input}
                 onFocus={handleFocusInput4}
                 onBlur={handleBlurInput4} 
+                secureTextEntry={true} 
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}
               />
 
             </View>
+
+            
             
           <TouchableOpacity style = {styles.button} onPress={showModal} >
             <Text style = {styles.buttonText} >CADASTRAR</Text>
