@@ -5,9 +5,13 @@ import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage';
 
+
+
 export default function Home() {
 
 const navigation = useNavigation();
+
+
 
 const [user, setUser]=useState(null);
 
@@ -83,9 +87,16 @@ useEffect(()=> {
             </TouchableOpacity>
 
           </View>
-
         </Animatable.View>
 
+    
+
+       
+
    </View>
+      
+  
+      
+
   );
 }

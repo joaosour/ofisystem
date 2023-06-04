@@ -1,9 +1,11 @@
 import styles from './styles.js'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, Modal} from 'react-native';
-import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native'
+import * as Animatable from 'react-native-animatable';
+import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import config from '../../../config/config.json';
 
 export default function Register() {
 
@@ -13,8 +15,20 @@ export default function Register() {
   const [IsFocusedInput3, setIsFocusedInput3] = useState(false)
   const [IsFocusedInput4, setIsFocusedInput4] = useState(false)
 
+  const [user, setUser]=useState(null);
+  const [senhaAtual, setSenhaAtual]=useState(null);
+  const [idUser, setIdUser]=useState(null);
+  const [msg, setMsg] = useState(null);
+  const [nameUserAdmin, setNameUserAdmin]=useState(null);
+  const [novoUsuario, setNovoUsuario]=useState(null);
+  const [novaSenha, setNovaSenha]=useState(null);
+  const idUserAdmin = 1;
+  //const idNameAdmin = 'Admin';
+
+
   const [isVisible, setIsVisible] = useState(false);
 
+ 
   const showModal = () => {
     setIsVisible(true);
     // setTimeout(hideModal, 3000);
@@ -48,6 +62,60 @@ export default function Register() {
   const handleBlurInput4 = () => {
     setIsFocusedInput4(false);
   }
+
+  useEffect(()=> {
+    async function getIdUser(){
+      let response= await AsyncStorage.getItem('userData');
+      let json=JSON.parse(response);
+      setIdUser(json.id);
+    }
+    getIdUser();
+  });
+
+
+useEffect(()=> {
+  async function getUser()
+  {
+    let response=await AsyncStorage.getItem('userData');
+    let json=JSON.parse(response);
+    setUser(json.name);
+  }
+  getUser();
+}, []);
+
+  async function sendForm1(){
+    try {
+    let response= await fetch(`${config.urlRoot}verifyPassRegister`, {
+        method: 'POST',
+        body:JSON.stringify({
+          id: idUserAdmin,
+          nameUserAdmin: nameUserAdmin,
+          senhaAtual: senhaAtual,
+
+          novoUsuario: novoUsuario,
+          novaSenha: novaSenha,
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+
+    });
+    let json = await response.json()
+      if(json ==='Usuario Criado Com Sucesso!'){
+        
+        navigation.navigate('ConfirmacaoCadastro');
+        //await AsyncStorage.clear();
+      }else{
+        setTimeout(()=>{
+          setMsg('');
+        }, 1500)
+        setMsg(json);
+      } 
+    } catch (error) {
+      console.error(error);
+    }  
+  } 
 
   const inputStyle1 = IsFocusedInput1? styles.inputContainerFocused : styles.inputContainer;
   const inputStyle2 = IsFocusedInput2? styles.inputContainerFocused : styles.inputContainer;
@@ -103,6 +171,7 @@ export default function Register() {
                 style={styles.input}
                 onFocus={handleFocusInput1}
                 onBlur={handleBlurInput1} 
+                onChangeText={text=>setNovoUsuario(text)}
                 />
 
             </View>
@@ -118,7 +187,8 @@ export default function Register() {
                 style={styles.input}
                 onFocus={handleFocusInput2}
                 onBlur={handleBlurInput2}
-                secureTextEntry={true}  
+                secureTextEntry={true}
+                onChangeText={text=>setNovaSenha(text)}  
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}
@@ -137,7 +207,8 @@ export default function Register() {
                 placeholderTextColor='#B1B1B1'
                 style={styles.input}
                 onFocus={handleFocusInput3}
-                onBlur={handleBlurInput3} 
+                onBlur={handleBlurInput3}
+                onChangeText={text=>setNameUserAdmin(text)}
                 />
 
             </View>
@@ -154,7 +225,8 @@ export default function Register() {
                 style={styles.input}
                 onFocus={handleFocusInput4}
                 onBlur={handleBlurInput4} 
-                secureTextEntry={true} 
+                secureTextEntry={true}
+                onChangeText={text=>setSenhaAtual(text)}  
                 />
               <Image style={[styles.inputImage, {marginLeft: 0}]}
                 source={require('../../assets/eye_open.png')}
@@ -164,9 +236,13 @@ export default function Register() {
 
             
             
-          <TouchableOpacity style = {styles.button} onPress={showModal} >
+          <TouchableOpacity style = {styles.button} onPress={ () => sendForm1()} >
             <Text style = {styles.buttonText} >CADASTRAR</Text>
           </TouchableOpacity>
+
+          <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
 
           </ScrollView>
         </Animatable.View>
@@ -180,3 +256,5 @@ export default function Register() {
    </View>
   );
 }
+
+///onPress={showModal}

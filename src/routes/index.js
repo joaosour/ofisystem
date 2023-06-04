@@ -6,6 +6,8 @@ import Home from '../pages/Home'
 import Profile from '../pages/Profile'
 import Catalog from '../pages/Catalog'
 import CatalogA from '../pages/CatalogA'
+import AlteracaoSenha from '../pages/AlteracaoSenha'
+import ConfirmacaoCadastro from '../pages/ConfirmacaoCadastro'
 
 
 const Stack = createNativeStackNavigator();
@@ -47,6 +49,17 @@ export default function Routes() {
                 component={CatalogA}
                 options={{ headerShown: false }}
             />
+            <Stack.Screen
+                name="AlteracaoSenha"
+                component={AlteracaoSenha}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoCadastro"
+                component={ConfirmacaoCadastro}
+                options={{ headerShown: false }}
+            />
+            
         </Stack.Navigator>
     )
 }

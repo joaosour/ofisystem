@@ -190,6 +190,18 @@ const styles = StyleSheet.create({
       fontWeight: '900',
   
     },
+    inputTitle1: {
+      fontSize: 18,
+      color: 'red',
+      fontWeight: '900', 
+      marginTop: 0,
+      marginBottom: 8,
+      //marginLeft: 30,
+      fontWeight: 'bold',
+      textAlign: 'center'
+  
+    },
+    
   
   });
 
