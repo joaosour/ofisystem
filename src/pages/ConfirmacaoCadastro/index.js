@@ -76,7 +76,11 @@ export default function AlteracaoSenha() {
           />
 
         <View style={styles.modalContent}>
+<<<<<<< HEAD
               <Text style={styles.modalText}>Novo Usuário Cadastrado com Sucesso!</Text>
+=======
+              <Text style={styles.modalText}>Novo Usuário cadastrado com Sucesso!</Text>
+>>>>>>> a735913ca27d2c85a0eb471d180d2f74346f1d13
             </View>
 
             <TouchableOpacity style = {styles.buttonBack} onPress={ () => navigation.navigate('Login')} >

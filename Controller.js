@@ -84,6 +84,7 @@ app.post('/verifyPassRegister', async(req, res)=> {
     }
 });
 
+<<<<<<< HEAD
 app.post('/cadastrarCategoria', async (req, res) => {
     let existingCategoria = await categoria.findOne({
       where: { categoria: req.body.novaCategoria }
@@ -119,6 +120,8 @@ app.post('/cadastrarCategoria', async (req, res) => {
 
 
 
+=======
+>>>>>>> a735913ca27d2c85a0eb471d180d2f74346f1d13
 let port=process.env.PORT || 3000;
 app.listen(port, (req, res) => {
     console.log('Servidor Rodando');
