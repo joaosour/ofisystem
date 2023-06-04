@@ -150,11 +150,13 @@ const styles = StyleSheet.create({
   
     },
     login_msg: (text='none')=>({
-      fontSize: 25,
+      fontSize: 18,
       fontWeight: 'bold',
       color: 'red',
       display: text,
       alignSelf: 'center',
+      marginBottom: 8,
+      //marginLeft: 30,
     }),
   
   });

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       top: 40,
-      borderWidth: 1,
+      //borderWidth: 1,
       borderColor: '#1D1238',
     },
     
@@ -152,12 +152,12 @@ const styles = StyleSheet.create({
     },
     
     buttonBack: {
-      top: 267,
+      top: 100,
       backgroundColor: '#1D1238',
       height: 50,
       width: 270,
       fontSize: 16,
-      marginTop: 15,
+      //marginTop: -15,
       marginBottom: 7,
       marginLeft: 30,
       marginRight: 30,
@@ -179,6 +179,20 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    button1: {
+        backgroundColor: '#F9F9F9',
+        height: 50,
+        fontSize: 16,
+        marginTop: 60,
+        marginBottom: 7,
+        marginLeft: 30,
+        marginRight: 30,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: '#1D1238',
+        borderWidth: 1,
+      },
   
     buttonText: {
       // width: '80%',
@@ -186,6 +200,12 @@ const styles = StyleSheet.create({
       color: '#FFF',
       fontWeight: 'bold'
     },
+    buttonText1: {
+        // width: '80%',
+        fontSize: 13,
+        color: '#1D1238',
+        fontWeight: 'bold'
+      },
   
     registerOptions: {
       flexDirection: 'row',
@@ -199,33 +219,6 @@ const styles = StyleSheet.create({
     registerOptionsText: {
       fontWeight: '900',
   
-    },
-    login_msg: (text='none')=>({
-      fontSize: 25,
-      fontWeight: 'bold',
-      color: 'red',
-      display: text,
-      alignSelf: 'center',
-    }),
-    inputTitle1: {
-      fontSize: 18,
-      color: 'red',
-      fontWeight: '900', 
-      marginTop: 0,
-      marginBottom: 8,
-      //marginLeft: 30,
-      fontWeight: 'bold',
-      textAlign: 'center'
-    },
-    inputTitle2: {
-      fontSize: 18,
-      //color: 'gren',
-      fontWeight: '900', 
-      marginTop: 0,
-      marginBottom: 8,
-      //marginLeft: 30,
-      fontWeight: 'bold',
-      textAlign: 'center'
     },
   
   });

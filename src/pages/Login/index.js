@@ -5,7 +5,8 @@ import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-// import database from '../../config/firebaseconfig'
+
+import config from '../../../config/config.json';
 
 export default function Login() {
 
@@ -47,7 +48,7 @@ export default function Login() {
   async function sendForm()
   {
     
-    let response=await fetch('http://192.168.1.11:3000/login', {
+    let response=await fetch(`${config.urlRoot}login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -93,8 +94,8 @@ export default function Login() {
 >
         
           <View style={styles.smallLine}></View>
-          <Text style={styles.title}>Cadastrar usuário!</Text>
-          <Text style={styles.text}>Insira os dados do novo usuário abaixo</Text>
+          <Text style={styles.title}>Fazer login!</Text>
+          <Text style={styles.text}>Insira as credenciais de acesso</Text>
           <Image
             style={styles.logoIcon}
             resizeMode='contain'

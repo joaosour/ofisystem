@@ -5,9 +5,13 @@ import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage';
 
+
+
 export default function Home() {
 
 const navigation = useNavigation();
+
+
 
 const [user, setUser]=useState(null);
 
@@ -54,7 +58,7 @@ useEffect(()=> {
 
           <View style={styles.containerCards}>
             
-            <TouchableOpacity style={styles.buttonCardsA}>
+            <TouchableOpacity style={styles.buttonCardsA} onPress={ () => navigation.navigate('CadastroCategoria')}>
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/cart_icon.png')}/>
               </View>
@@ -83,9 +87,16 @@ useEffect(()=> {
             </TouchableOpacity>
 
           </View>
-
         </Animatable.View>
 
+    
+
+       
+
    </View>
+      
+  
+      
+
   );
 }
