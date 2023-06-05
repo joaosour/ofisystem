@@ -8,12 +8,8 @@ import Catalog from '../pages/Catalog'
 import CatalogA from '../pages/CatalogA'
 import AlteracaoSenha from '../pages/AlteracaoSenha'
 import ConfirmacaoCadastro from '../pages/ConfirmacaoCadastro'
-<<<<<<< HEAD
 import ConfirmacaoCadastroCat from '../pages/ConfirmacaoCadastroCat'
 import CadastroCategoria from '../pages/CadastroCategoria'
-=======
->>>>>>> a735913ca27d2c85a0eb471d180d2f74346f1d13
-
 
 const Stack = createNativeStackNavigator();
 
@@ -64,7 +60,6 @@ export default function Routes() {
                 component={ConfirmacaoCadastro}
                 options={{ headerShown: false }}
             />
-<<<<<<< HEAD
             <Stack.Screen
                 name="ConfirmacaoCadastroCat"
                 component={ConfirmacaoCadastroCat}
@@ -77,8 +72,6 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
 
-=======
->>>>>>> a735913ca27d2c85a0eb471d180d2f74346f1d13
             
         </Stack.Navigator>
     )

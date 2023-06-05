@@ -31,7 +31,7 @@ async function sendForm2(){
         
         novaCategoria: novaCategoria,
         novaDescricao: novaDescricao,
-        //novaImg: novaImg, 
+        novaImg: novaImg, 
       }),
       headers: {
         Accept: 'application/json',
@@ -117,9 +117,9 @@ async function sendForm2(){
               placeholder='Link Foto'
               placeholderTextColor='#B1B1B1'
               //style={styles.inputCategoria}
-              multiline={true}
+              //multiline={true}
               numberOfLines={1}
-              //onChangeText={text=> setNovaImg(text)}
+              onChangeText={text=> setNovaImg(text)}
             />
               </View>
         <View style={styles.containerDescription}>

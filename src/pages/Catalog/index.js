@@ -68,7 +68,7 @@ export default function Catalog() {
               <Text style={styles.titleCards}>{categoria.categoria}</Text>
               <View style={styles.buttonCardsA}>
                 <View style={styles.buttonCardsB}>
-                  <Image style={styles.buttonImage} source={{uri: 'https://ericbike.vteximg.com.br/arquivos/ids/157469-0-0/Selim-Banco-de-Bike-Vazado-Elleven-Lycra.jpg?v=637097020334700000'}} />
+                  <Image style={styles.buttonImage} source={{uri: categoria.url_img}} />
                 </View>
 
                 <View style={styles.containerDescription}>

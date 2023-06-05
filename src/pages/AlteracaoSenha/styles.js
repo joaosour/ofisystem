@@ -27,11 +27,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       top: 40,
-<<<<<<< HEAD
-      //borderWidth: 1,
-=======
       borderWidth: 1,
->>>>>>> a735913ca27d2c85a0eb471d180d2f74346f1d13
       borderColor: '#1D1238',
     },
     
