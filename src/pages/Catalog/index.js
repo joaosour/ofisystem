@@ -62,6 +62,16 @@ export default function Catalog() {
         direction="alternate"
       >
         <View style={styles.smallLine}></View>
+
+        <View style={styles.headerBottons}>
+          <TouchableOpacity
+          style={styles.buttonRegister}
+          onPress={() => navigation.navigate('CadastroCategoria')} //cadastrar modelo
+          >
+            <Text style={styles.buttonRegisterFont}>Cadastrar Categoria</Text>
+          </TouchableOpacity>
+        </View>
+
         <ScrollView showsVerticalScrollIndicator={false}>
           {categorias.map((categoria) => (
             <View style={styles.containerCards} key={categoria.id}>

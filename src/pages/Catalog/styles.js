@@ -79,6 +79,33 @@ const styles = StyleSheet.create({
     marginBottom: 34,
   },
 
+  headerBottons: {
+    height: 25,
+    // backgroundColor: 'red',
+    alignItems: 'flex-end',
+  },
+
+  buttonRegister: {
+    width: 120,
+    backgroundColor: '#D4F8E7',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+  },
+
+
+  buttonRegisterFont: {
+    fontSize: 12,
+    color: '#1FB76F'
+  },
+
   containerForm: {
     flex: 1,
     backgroundColor: '#fff',

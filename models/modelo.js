@@ -10,13 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Modelo.belongsTo(models.Categoria); //Modelo pertence a uma categoria
+      //Modelo.belongsTo(models.Categoria); //Modelo pertence a uma categoria
     }
   }
   Modelo.init({
     modelo: DataTypes.STRING,
     valor: DataTypes.STRING,
-    idCategoria: DataTypes.INTEGER
+    idCategoria: DataTypes.INTEGER,
+    url_imgModel: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Modelo',

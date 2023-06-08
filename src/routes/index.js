@@ -10,6 +10,8 @@ import AlteracaoSenha from '../pages/AlteracaoSenha'
 import ConfirmacaoCadastro from '../pages/ConfirmacaoCadastro'
 import ConfirmacaoCadastroCat from '../pages/ConfirmacaoCadastroCat'
 import CadastroCategoria from '../pages/CadastroCategoria'
+import CadastroModelo from '../pages/CadastroModelo'
+import ConfirmacaoCadastroMod from '../pages/ConfirmacaoCadastroMod'
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +71,17 @@ export default function Routes() {
             <Stack.Screen
                 name="CadastroCategoria"
                 component={CadastroCategoria}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoCadastroMod"
+                component={ConfirmacaoCadastroMod}
+                options={{ headerShown: false }}
+            />
+            
+            <Stack.Screen
+                name="CadastroModelo"
+                component={CadastroModelo}
                 options={{ headerShown: false }}
             />
 

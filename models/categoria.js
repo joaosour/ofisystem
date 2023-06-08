@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Categoria.belongsTo(models.User); //Categoria pertence a usuario
-      Categoria,this.hasMany(models.Modelo); //Uma categoria pode ter muitos modelos
+      //Categoria,this.hasMany(models.Modelo); //Uma categoria pode ter muitos modelos
     }
   }
   Categoria.init({

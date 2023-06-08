@@ -4,13 +4,28 @@ import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, S
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage';
+import config from '../../../config/config.json';
 
 
 export default function CatalogA() {
 
 const navigation = useNavigation();
-
 const [user, setUser]=useState(null);
+const [modelos, setModelos]=useState([]);
+
+useEffect(() => {
+  async function fetchData(){
+    try {
+      const response = await fetch(`${config.urlRoot}listarModelo`);
+        const modelosData = await response.json();
+        setModelos(modelosData);
+
+    } catch (error){
+      console.error(error);
+    }
+  }
+  fetchData();
+}, []);
 
 useEffect(()=> {
   async function getUser()
@@ -51,64 +66,43 @@ useEffect(()=> {
           direction='alternate'>
         <View style={styles.smallLine}></View>
 
+        <View style={styles.headerBottons}>
+          <TouchableOpacity
+          style={styles.buttonRegister}
+          onPress={() => navigation.navigate('CadastroModelo')} //cadastrar modelo
+          >
+            <Text style={styles.buttonRegisterFont}>Cadastrar Modelo</Text>
+          </TouchableOpacity>
+        </View>
+
         <ScrollView showsVerticalScrollIndicator={false}>
-          
+        {modelos.map((modelo) => ( 
                     
         <View style={styles.containerCards}>
             <Text style={styles.titleCards}>Bancos</Text>
             
             <View style={styles.buttonCardsA}>
               <View style={styles.buttonCardsB}>
-                <Image style={styles.buttonImage} source={require('../../assets/cover_banco.png')}/>
+                <Image style={styles.buttonImage} source={{uri: modelo.url_imgModel}}/>
               </View>
 
               <View style={styles.containerDescription}>
 
                 <View style={styles.containerDescriptionText}>
                   <Text style={styles.modelDescription}>Modelo</Text>
-                  <Text style={styles.nameModelDescription}>Calypso</Text>
-                  <Text style={styles.subtotalDescription}>Subtotal</Text>
+                  <Text style={styles.nameModelDescription}>{modelo.modelo}</Text>
+                  <Text style={styles.subtotalDescription}>Valor: </Text>
                 </View>
 
                 <View style={styles.containerDescriptionAmount}>
-
-                  <View style={styles.containerDescriptionAmountA}>
-                    <TouchableOpacity style={styles.bottomAddRemove}>
-                      <Text style={styles.bottomAddRemoveText}>-</Text>
-                    </TouchableOpacity>
-
-                    <TextInput
-                      style={styles.amountInput}
-                      placeholder='1'  
-                    >
-                    </TextInput>
-
-                    <TouchableOpacity style={styles.bottomAddRemove}>
-                      <Text style={styles.bottomAddRemoveText}>+</Text>
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={styles.containerDescriptionAmountB}>
-
-                    <TouchableOpacity style={styles.buttonAddCart}>
-
-                      <Text style={styles.fontButtonAddCart}>Adicionar</Text>
-
-                    </TouchableOpacity>
-
-                    <Text style={styles.textValueAmount}>R$ 38,90</Text>
-
-                  </View>
+                <Text style={styles.textValueAmount}>R$ {modelo.valor}</Text>
 
                 </View>
 
-
               </View>
-
             </View>
-
             </View>
-        
+        ))}
         </ScrollView> 
 
         </Animatable.View>

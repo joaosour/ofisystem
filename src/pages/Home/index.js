@@ -58,7 +58,7 @@ useEffect(()=> {
 
           <View style={styles.containerCards}>
             
-            <TouchableOpacity style={styles.buttonCardsA} onPress={ () => navigation.navigate('CadastroCategoria')}>
+            <TouchableOpacity style={styles.buttonCardsA}>
               <View style={styles.buttonCardsB}>
                  <Image style={styles.buttonIcons} source={require('../../assets/cart_icon.png')}/>
               </View>
