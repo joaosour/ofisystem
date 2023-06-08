@@ -12,6 +12,7 @@ export default function CatalogA() {
 const navigation = useNavigation();
 const [user, setUser]=useState(null);
 const [modelos, setModelos]=useState([]);
+const [cat, setCat]=useState(null);
 
 useEffect(() => {
   async function fetchData(){
