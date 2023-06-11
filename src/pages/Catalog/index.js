@@ -6,11 +6,15 @@ import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage';
 import config from '../../../config/config.json';
 
+
+
+
 export default function Catalog() {
 
   const navigation = useNavigation();
   const [user, setUser]=useState(null);
   const [categorias, setCategorias] = useState([]);
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
 
 
   useEffect(() => {
@@ -31,11 +35,19 @@ export default function Catalog() {
     async function getUser() {
       let response = await AsyncStorage.getItem('userData');
       let json = JSON.parse(response);
-      setUser(json.name);
+      if (json != null){
+        setUser(json.name);
+      }
+      
     }
 
     getUser();
   }, []);
+
+  const handleVerModelos = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    navigation.navigate('CatalogA', {categoria: categoria.categoria});
+  };
 
   return (
     <View style={styles.container}>
@@ -76,6 +88,7 @@ export default function Catalog() {
           {categorias.map((categoria) => (
             <View style={styles.containerCards} key={categoria.id}>
               <Text style={styles.titleCards}>{categoria.categoria}</Text>
+              
               <View style={styles.buttonCardsA}>
                 <View style={styles.buttonCardsB}>
                   <Image style={styles.buttonImage} source={{uri: categoria.url_img}} />
@@ -88,7 +101,7 @@ export default function Catalog() {
                     <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
                     <TouchableOpacity
                       style={styles.buttonSee}
-                      onPress={() => navigation.navigate('CatalogA')}
+                      onPress={() => handleVerModelos(categoria)}
                     >
                       <Text style={styles.buttonSeeFont}>Ver</Text>
                     </TouchableOpacity>

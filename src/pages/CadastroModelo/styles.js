@@ -251,10 +251,10 @@ const styles = StyleSheet.create({
   },
     
   input: {
-    flex: 5,
+    flex: 2,
     height: 80,
     paddingLeft: 10,
-    paddingRight: 4,
+    paddingRight: 2,
     // backgroundColor: 'red',
   },
     

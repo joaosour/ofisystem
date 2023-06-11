@@ -37,6 +37,9 @@ module.exports = {
       url_imgModel:{
         type: Sequelize.STRING
       },
+      nomeCategoria: {
+        type: Sequelize.STRING
+      }
     });
   },
   async down(queryInterface, Sequelize) {

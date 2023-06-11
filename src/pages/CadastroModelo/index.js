@@ -21,6 +21,7 @@ const setIdUserValue = (value) => {
 const [novoModelo, setNovoModelo]=useState(null);
 const [novoValor, setNovoValor]=useState(null);
 const [novaImgmod, setNovaImgmod]=useState(null);
+const [novaCat, setNovaCat]=useState(null);
 const [msg, setMsg] = useState(null);
 
 async function sendForm3(){
@@ -30,7 +31,8 @@ async function sendForm3(){
       body: JSON.stringify({
         novoModelo: novoModelo,
         novoValor: novoValor,
-        novaImgmod: novaImgmod, 
+        novaImgmod: novaImgmod,
+        novaCat: novaCat, 
       }),
       headers: {
         Accept: 'application/json',
@@ -130,6 +132,16 @@ async function sendForm3(){
             multiline={true}
             numberOfLines={4}
             onChangeText={text=>setNovoValor(text)}
+          />
+
+      <Text style={styles.textDescription}>Categoria</Text>
+          <TextInput
+            placeholder='Digite o nome da categoria'
+            placeholderTextColor='#B1B1B1'
+            style={styles.input}
+            multiline={true}
+            numberOfLines={4}
+            onChangeText={text=>setNovaCat(text)}
           />
               
 

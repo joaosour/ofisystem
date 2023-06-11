@@ -2,17 +2,22 @@ import styles from './styles.js'
 import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView} from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage';
 import config from '../../../config/config.json';
+
+import { minhaConstante } from '../Catalog/index.js'
 
 
 export default function CatalogA() {
 
 const navigation = useNavigation();
+const route = useRoute();
 const [user, setUser]=useState(null);
 const [modelos, setModelos]=useState([]);
 const [cat, setCat]=useState(null);
+const { categoria } = route.params;
+
 
 useEffect(() => {
   async function fetchData(){
@@ -33,7 +38,10 @@ useEffect(()=> {
   {
     let response=await AsyncStorage.getItem('userData');
     let json=JSON.parse(response);
-    setUser(json.name);
+    if (json != null){
+      setUser(json.name);
+    }
+    
   }
   getUser();
 }, [])
@@ -77,34 +85,32 @@ useEffect(()=> {
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
-        {modelos.map((modelo) => ( 
-                    
-        <View style={styles.containerCards}>
-            <Text style={styles.titleCards}>Bancos</Text>
-            
-            <View style={styles.buttonCardsA}>
-              <View style={styles.buttonCardsB}>
-                <Image style={styles.buttonImage} source={{uri: modelo.url_imgModel}}/>
-              </View>
+  {modelos
+    .filter((modelo) => modelo.nomeCategoria === categoria) // Substitua 'NomeCategoria' pelo valor desejado
+    .map((modelo) => (
+      <View style={styles.containerCards} key={modelo.id}>
+        <Text style={styles.titleCards}>{modelo.nomeCategoria}</Text>
 
-              <View style={styles.containerDescription}>
+        <View style={styles.buttonCardsA}>
+          <View style={styles.buttonCardsB}>
+            <Image style={styles.buttonImage} source={{uri: modelo.url_imgModel}}/>
+          </View>
 
-                <View style={styles.containerDescriptionText}>
-                  <Text style={styles.modelDescription}>Modelo</Text>
-                  <Text style={styles.nameModelDescription}>{modelo.modelo}</Text>
-                  <Text style={styles.subtotalDescription}>Valor: </Text>
-                </View>
-
-                <View style={styles.containerDescriptionAmount}>
-                <Text style={styles.textValueAmount}>R$ {modelo.valor}</Text>
-
-                </View>
-
-              </View>
+          <View style={styles.containerDescription}>
+            <View style={styles.containerDescriptionText}>
+              <Text style={styles.modelDescription}>Modelo</Text>
+              <Text style={styles.nameModelDescription}>{modelo.modelo}</Text>
+              <Text style={styles.subtotalDescription}>Valor: </Text>
             </View>
+
+            <View style={styles.containerDescriptionAmount}>
+              <Text style={styles.textValueAmount}>R$ {modelo.valor}</Text>
             </View>
-        ))}
-        </ScrollView> 
+          </View>
+        </View>
+      </View>
+    ))}
+</ScrollView> 
 
         </Animatable.View>
 

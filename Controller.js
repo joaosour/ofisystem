@@ -109,19 +109,35 @@ app.post('/cadastrarCategoria', async (req, res) => {
       where: { modelo: req.body.novoModelo }
     });
   
-    if (existingModelo) {
-      res.send(JSON.stringify('O modelo já existe!'));
-    } else {
-      let responseCreateModelo = await modelo.create({
-        id: null,
-        modelo: req.body.novoModelo,
-        valor: req.body.novoValor,
-        //idCategoria: 0,
-        url_imgModel: req.body.novaImgmod,
+    if (existingModelo === null) {
+
+        let existingCat = await categoria.findOne({
+            where: {categoria: req.body.novaCat}
+        });
+        const idCat = existingCat.id;
+        const nomeCat = existingCat.categoria;
+        
+        if (existingCat === null){
+            res.send(JSON.stringify('Categoria não encontrada'));
+            
+        } else {
+            
+                let responseCreateModelo = await modelo.create({
+                    id: null,
+                    modelo: req.body.novoModelo,
+                    valor: req.body.novoValor,
+                    idCategoria: idCat,
+                    url_imgModel: req.body.novaImgmod,
+                    nomeCategoria: nomeCat,
       });
-  
       res.send(JSON.stringify('Modelo Criado Com Sucesso!'));
+        
+    } 
+      
+    } else {
+        res.send(JSON.stringify('O modelo já existe!')); 
     }
+    
   });
 
   app.get('/listarCategoria', async(req, res)=>{
@@ -134,6 +150,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
         res.status(500).json({ error: 'Erro ao listar as categorias.' });
       }
   });
+  
 
   app.get('/listarModelo', async(req, res)=>{
     try {
