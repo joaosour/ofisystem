@@ -24,6 +24,8 @@ const [novaImgmod, setNovaImgmod]=useState(null);
 const [novaCat, setNovaCat]=useState(null);
 const [msg, setMsg] = useState(null);
 
+
+
 async function sendForm3(){
   try{
     let response = await fetch(`${config.urlRoot}cadastrarModelo`,{
@@ -54,6 +56,8 @@ async function sendForm3(){
     console.error(error);
   }
 };
+
+
 
  return (
    <View style = {styles.container}>

@@ -2,6 +2,7 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
+const { Sequelize} = require('sequelize');
 
 const app=express();
 app.use(cors());
@@ -114,13 +115,14 @@ app.post('/cadastrarCategoria', async (req, res) => {
         let existingCat = await categoria.findOne({
             where: {categoria: req.body.novaCat}
         });
-        const idCat = existingCat.id;
-        const nomeCat = existingCat.categoria;
+        
         
         if (existingCat === null){
             res.send(JSON.stringify('Categoria não encontrada'));
             
         } else {
+            const idCat = existingCat.id;
+            const nomeCat = existingCat.categoria;
             
                 let responseCreateModelo = await modelo.create({
                     id: null,
@@ -142,14 +144,30 @@ app.post('/cadastrarCategoria', async (req, res) => {
 
   app.get('/listarCategoria', async(req, res)=>{
     try {
-        const categorias = await categoria.findAll();
+        const categorias = await categoria.findAll({
+
+        attributes: {
+            include: [
+              [
+                Sequelize.literal(`(
+                  SELECT COUNT(*)
+                  FROM modelos
+                  WHERE modelos.idCategoria = categoria.id
+                )`),
+                'quantModel',
+              ],
+            ],
+          },
+        });
 
         res.json(categorias);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Erro ao listar as categorias.' });
+        res
+        .status(500)
+        .json({ error: 'Erro ao listar as categorias.' });
       }
-  });
+  });;
   
 
   app.get('/listarModelo', async(req, res)=>{
