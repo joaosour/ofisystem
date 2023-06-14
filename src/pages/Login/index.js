@@ -10,18 +10,6 @@ import config from '../../../config/config.json';
 
 export default function Login() {
 
-  // const [task, setTask] = useState([])
-
-  // useEffect(()=>{
-  //   database.collection("users").onSnapshot((query)=>{
-  //     const list = []
-  //     query.forEach((doc)=>{
-  //       list.push({...doc.data(), id: doc.id})
-  //     })
-  //     setTask(list)
-  //   })
-  // }, [])
-
   const navigation = useNavigation();
   const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
   const [IsFocusedInput2, setIsFocusedInput2] = useState(false)
@@ -72,9 +60,6 @@ export default function Login() {
             navigation.navigate('Home');
         }
   } 
-  
-
-
 
   const inputStyle1 = IsFocusedInput1? styles.inputContainerFocused : styles.inputContainer;
   const inputStyle2 = IsFocusedInput2? styles.inputContainerFocused : styles.inputContainer;
