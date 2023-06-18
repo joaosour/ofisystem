@@ -155,10 +155,20 @@ app.post('/cadastrarCategoria', async (req, res) => {
                   WHERE modelos.idCategoria = categoria.id
                 )`),
                 'quantModel',
+                
               ],
+              
             ],
           },
         });
+
+        for (const cat of categorias){
+            await categoria.update(
+                { quantModel: cat.getDataValue('quantModel')},
+                { where: { id: cat.id}}
+            );
+            
+        }
 
         res.json(categorias);
     } catch (error) {
