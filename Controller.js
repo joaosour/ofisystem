@@ -2,7 +2,11 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
+<<<<<<< HEAD
 const { Sequelize, where} = require('sequelize');
+=======
+const { Sequelize} = require('sequelize');
+>>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
 
 const app=express();
 app.use(cors());
@@ -191,6 +195,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
       }
   });
 
+<<<<<<< HEAD
   app.get('/editarModelo', async(req, res)=>{
     try {
         const modelos = await modelo.findAll();
@@ -241,6 +246,10 @@ app.post('/cadastrarCategoria', async (req, res) => {
       res.status(500).json({ error: 'Erro ao excluir a categoria!' });
     }
   });
+=======
+  
+
+>>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
 
 
 let port=process.env.PORT || 3000;
