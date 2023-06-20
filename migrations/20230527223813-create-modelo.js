@@ -1,4 +1,5 @@
 'use strict';
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -17,12 +18,12 @@ module.exports = {
       },
       idCategoria: {
         type: Sequelize.INTEGER,
-        references:{ //Trasformando em chave estrangeira
-          model: 'categoria',
-          key: 'id'
-        },
-        onUpdate: 'cascade',
-        onDelete:'cascade'
+        //references:{ //Trasformando em chave estrangeira
+          //model: 'categoria',
+          //key: 'id'
+       // },
+        //onUpdate: 'cascade',
+        //onDelete:'cascade'
 
       },
       createdAt: {
@@ -32,6 +33,12 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      url_imgModel:{
+        type: Sequelize.STRING
+      },
+      nomeCategoria: {
+        type: Sequelize.STRING
       }
     });
   },

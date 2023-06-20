@@ -11,14 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Categoria.belongsTo(models.User); //Categoria pertence a usuario
-      Categoria,this.hasMany(models.Modelo); //Uma categoria pode ter muitos modelos
+      //Categoria,this.hasMany(models.Modelo); //Uma categoria pode ter muitos modelos
     }
   }
   Categoria.init({
     categoria: DataTypes.STRING,
     descricao: DataTypes.STRING,
     quantModel: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    url_img: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Categoria',

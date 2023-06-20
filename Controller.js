@@ -2,6 +2,7 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
+const { Sequelize, where} = require('sequelize');
 
 const app=express();
 app.use(cors());
@@ -10,6 +11,8 @@ app.use(bodyParser.json());
 let user=models.User;
 let categoria=models.Categoria;
 let modelo=models.Modelo;
+
+
 
 app.post('/login', async(req, res)=>{
     let response=await user.findOne({
@@ -81,6 +84,164 @@ app.post('/verifyPassRegister', async(req, res)=> {
         
     }
 });
+
+app.post('/cadastrarCategoria', async (req, res) => {
+    let existingCategoria = await categoria.findOne({
+      where: { categoria: req.body.novaCategoria }
+    });
+  
+    if (existingCategoria) {
+      res.send(JSON.stringify('A categoria já existe!'));
+    } else {
+      let responseCreateCategoria = await categoria.create({
+        id: null,
+        categoria: req.body.novaCategoria,
+        descricao: req.body.novaDescricao,
+        quantModel: 0,
+        url_img: req.body.novaImg,
+      });
+  
+      res.send(JSON.stringify('Categoria Criada Com Sucesso!'));
+    }
+  });
+
+  app.post('/cadastrarModelo', async (req, res) => {
+    let existingModelo = await modelo.findOne({
+      where: { modelo: req.body.novoModelo }
+    });
+  
+    if (existingModelo === null) {
+
+        let existingCat = await categoria.findOne({
+            where: {categoria: req.body.novaCat}
+        });
+        
+        
+        if (existingCat === null){
+            res.send(JSON.stringify('Categoria não encontrada'));
+            
+        } else {
+            const idCat = existingCat.id;
+            const nomeCat = existingCat.categoria;
+            
+                let responseCreateModelo = await modelo.create({
+                    id: null,
+                    modelo: req.body.novoModelo,
+                    valor: req.body.novoValor,
+                    idCategoria: idCat,
+                    url_imgModel: req.body.novaImgmod,
+                    nomeCategoria: nomeCat,
+      });
+      res.send(JSON.stringify('Modelo Criado Com Sucesso!'));
+        
+    } 
+      
+    } else {
+        res.send(JSON.stringify('O modelo já existe!')); 
+    }
+    
+  });
+
+  app.get('/listarCategoria', async(req, res)=>{
+    try {
+        const categorias = await categoria.findAll({
+
+        attributes: {
+            include: [
+              [
+                Sequelize.literal(`(
+                  SELECT COUNT(*)
+                  FROM modelos
+                  WHERE modelos.idCategoria = categoria.id
+                )`),
+                'quantModel',
+                
+              ],
+              
+            ],
+          },
+        });
+
+        for (const cat of categorias){
+            await categoria.update(
+                { quantModel: cat.getDataValue('quantModel')},
+                { where: { id: cat.id}}
+            );
+            
+        }
+
+        res.json(categorias);
+    } catch (error) {
+        console.error(error);
+        res
+        .status(500)
+        .json({ error: 'Erro ao listar as categorias.' });
+      }
+  });;
+  
+
+  app.get('/listarModelo', async(req, res)=>{
+    try {
+        const modelos = await modelo.findAll();
+
+        res.json(modelos);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao listar as modelos.' });
+      }
+  });
+
+  app.get('/editarModelo', async(req, res)=>{
+    try {
+        const modelos = await modelo.findAll();
+
+        res.json(modelos);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao listar as modelos.' });
+      }
+  });
+
+  app.delete('/excluirModelo', async (req, res) => {
+    try {
+      let existingModeloExcluir = await modelo.findOne({
+        where: { modelo: req.body.selectModel }
+      });
+      
+      if (existingModeloExcluir === null) {
+        res.send(JSON.stringify('Modelo Não Confere com o Listado Acima'));
+      } else {
+        existingModeloExcluir.destroy();
+        res.send(JSON.stringify('Modelo excluído com sucesso!'));
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir o modelo' });
+    }
+  });
+
+  app.delete('/excluirCategoria', async (req, res) => {
+    try {
+      let existingcategoriaExcluir = await categoria.findOne({
+        where: { categoria: req.body.selectCategoria }
+      });
+      
+      if (existingcategoriaExcluir === null) {
+        res.send(JSON.stringify('Categoria Não Confere com a Listada Acima'));
+      } else {
+        if (existingcategoriaExcluir.quantModel > 0 ){
+          res.send(JSON.stringify('Exclusão Falhou! Categoria Possui Modelos Vinculados'));
+        } else {
+        existingcategoriaExcluir.destroy();
+        res.send(JSON.stringify('Categoria excluída com sucesso!'));
+      }
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir a categoria!' });
+    }
+  });
+
 
 let port=process.env.PORT || 3000;
 app.listen(port, (req, res) => {
