@@ -2,7 +2,11 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
+
 const { Sequelize, where} = require('sequelize');
+
+const { Sequelize, where} = require('sequelize');
+
 
 const app=express();
 app.use(cors());
@@ -191,6 +195,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
       }
   });
 
+
   app.post('/editarModelo', async (req, res) => {
     try {
       let existingmodeloEditar = await modelo.findOne({
@@ -210,6 +215,17 @@ app.post('/cadastrarCategoria', async (req, res) => {
       console.error(error);
       res.status(500).json({ error: 'Erro ao editar o modelo' });
     }
+
+  app.get('/editarModelo', async(req, res)=>{
+    try {
+        const modelos = await modelo.findAll();
+
+        res.json(modelos);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao listar as modelos.' });
+      }
+
   });
 
   app.delete('/excluirModelo', async (req, res) => {
@@ -252,6 +268,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
     }
   });
 
+
   app.post('/editarCategoria', async (req, res) => {
     try {
       let existingcategoriaEditar = await categoria.findOne({
@@ -272,8 +289,6 @@ app.post('/cadastrarCategoria', async (req, res) => {
       res.status(500).json({ error: 'Erro ao excluir a categoria!' });
     }
   });
-
-
 
 let port=process.env.PORT || 3000;
 app.listen(port, (req, res) => {

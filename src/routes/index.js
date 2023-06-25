@@ -12,6 +12,10 @@ import ConfirmacaoCadastroCat from '../pages/ConfirmacaoCadastroCat'
 import CadastroCategoria from '../pages/CadastroCategoria'
 import CadastroModelo from '../pages/CadastroModelo'
 import ConfirmacaoCadastroMod from '../pages/ConfirmacaoCadastroMod'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ec3b8c251253d5c51aecf59995f0db0dcaa34a32
 import EdicaoModelo from '../pages/EdicaoModelo'
 import ConfirmacaoEdicaoModelo from '../pages/ConfirmacaoEdicaoModelo'
 import ExclusaoModelo from '../pages/ExclusaoModelo'
@@ -20,6 +24,11 @@ import EdicaoCategoria from '../pages/EdicaoCategoria'
 import ConfirmacaoEdicaocategoria from '../pages/ConfirmacaoEdicaoCategoria'
 import ExclusaoCategoria from '../pages/ExclusaoCategoria'
 import ConfirmacaoExclusaoCategoria from '../pages/ConfirmacaoExclusaoCategoria'
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
+>>>>>>> ec3b8c251253d5c51aecf59995f0db0dcaa34a32
 
 const Stack = createNativeStackNavigator();
 
@@ -93,6 +102,10 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ec3b8c251253d5c51aecf59995f0db0dcaa34a32
             <Stack.Screen
                 name="EdicaoModelo"
                 component={EdicaoModelo}
@@ -134,6 +147,11 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
+>>>>>>> ec3b8c251253d5c51aecf59995f0db0dcaa34a32
             
         </Stack.Navigator>
     )
