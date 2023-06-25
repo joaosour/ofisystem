@@ -49,6 +49,15 @@ export default function Catalog() {
     navigation.navigate('CatalogA', {categoria: categoria.categoria});
   };
 
+  const handleExcluirCategoria = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    navigation.navigate('ExclusaoCategoria', {categoriaSelecionada: categoria})
+  };
+  const handleEditarCategoria = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    navigation.navigate('EdicaoCategoria', {categoriaSelecionada: categoria})
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerHeader}>
@@ -94,19 +103,85 @@ export default function Catalog() {
                   <Image style={styles.buttonImage} source={{uri: categoria.url_img}} />
                 </View>
 
+
+
+
+
                 <View style={styles.containerDescription}>
-                  <Text style={styles.textDescription}>{categoria.descricao}</Text>
-                  <Text style={styles.modelDescription}>Modelos:</Text>
+
+                  <View style={styles.containerDescriptionAB}>
+
+                    <View style={styles.containerDescriptionA}>
+                      
+                      <Text style={styles.textDescription}>{categoria.descricao}</Text>
+
+                    </View>
+
+                    <View style={styles.containerDescriptionB}>
+
+                     <Text style={styles.modelDescription}>Modelos</Text>
+
+                     <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
+
+                    </View>
+
+                  </View>
+
+                  <View style={styles.containerDescriptionC}>
+
+                    
+                    <TouchableOpacity
+                      style={styles.bottonExcluir}
+                      onPress={() => handleExcluirCategoria(categoria)} 
+                      >
+                    <Text style={styles.textBottonExcluir}>Excluir</Text>
+                    </TouchableOpacity>
+
+                                        
+                    <TouchableOpacity
+                        style={styles.buttonEdit}
+                        onPress={() => handleEditarCategoria(categoria)}
+                      >
+                        <Text style={styles.buttonEditFont}>Editar</Text>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                        style={styles.buttonSee}
+                        onPress={() => handleVerModelos(categoria)}
+                      >
+                        <Text style={styles.buttonSeeFont}>Ver modelos</Text>
+                    </TouchableOpacity>
+
+                  </View>
+
+                </View>
+
+                {/* <Text style={styles.textDescription}>{categoria.descricao}</Text>
+                  
+                  <Text style={styles.modelDescription}>Modelos</Text>
                   <View style={styles.containerBottomDescription}>
                     <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
+                    
                     <TouchableOpacity
                       style={styles.buttonSee}
                       onPress={() => handleVerModelos(categoria)}
                     >
                       <Text style={styles.buttonSeeFont}>Ver</Text>
                     </TouchableOpacity>
+                    
                   </View>
-                </View>
+
+                  <View>
+                  <TouchableOpacity
+                      style={styles.bottonExcluir}
+                      onPress={() => handleExcluirCategoria(categoria)} 
+                      >
+                  <Text style={styles.textBottonExcluir}>Excluir</Text>
+                  </TouchableOpacity>
+                  </View> */}
+
+
+
               </View>
             </View>
           ))}

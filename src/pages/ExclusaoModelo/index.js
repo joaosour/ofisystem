@@ -9,15 +9,33 @@ import config from '../../../config/config.json';
 import { minhaConstante } from '../Catalog/index.js'
 
 
-export default function CatalogA() {
+export default function ExclusaoModelo() {
 
 const navigation = useNavigation();
 const route = useRoute();
 const [user, setUser]=useState(null);
 const [modelos, setModelos]=useState([]);
-const [modeloSelecionado, setModeloSelecionado]=useState(null);
 const [cat, setCat]=useState(null);
-const { categoria } = route.params;
+const { modeloSelecionado } = route.params;
+const [selectModel, setSelectModel]=useState(null);
+const [msg, setMsg] = useState(null);
+
+const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
+  const [IsFocusedInput2, setIsFocusedInput2] = useState(false)
+
+  const handleFocusInput1 = () => {
+    setIsFocusedInput1(true);
+  }
+  const handleBlurInput1 = () => {
+    setIsFocusedInput1(false);
+  }
+  const handleFocusInput2 = () => {
+    setIsFocusedInput2(true);
+  }
+  const handleBlurInput2 = () => {
+    setIsFocusedInput2(false);
+  }
+
 
 
 useEffect(() => {
@@ -26,7 +44,7 @@ useEffect(() => {
       const response = await fetch(`${config.urlRoot}listarModelo`);
         const modelosData = await response.json();
         setModelos(modelosData);
-
+        
     } catch (error){
       console.error(error);
     }
@@ -45,20 +63,47 @@ useEffect(()=> {
     
   }
   getUser();
-}, [])
+}, []);
 
-const handleEditarModelo = (modelo) => {
-  setModeloSelecionado(modelo);
-  navigation.navigate('EdicaoModelo', {modeloSelecionado: modelo})
-};
+async function sendForm3() {
+  if (selectModel === modeloSelecionado.modelo) {
+    try {
+      let response = await fetch(`${config.urlRoot}excluirModelo`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          selectModel: selectModel,
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
 
-const handleExcluirModelo = (modelo) => {
-  setModeloSelecionado(modelo);
-  navigation.navigate('ExclusaoModelo', {modeloSelecionado: modelo})
-};
+      let json = await response.json();
+      if (json === 'Modelo excluído com sucesso!') {
+        navigation.navigate('ConfirmacaoExclusaoModelo');
+      } else {
+        setTimeout(() => {
+          setMsg('');
+        }, 1500);
+        setMsg(json);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    setTimeout(() => {
+      setMsg('');
+    }, 1500);
+    setMsg('O modelo inserido não corresponde ao modelo selecionado!');
+  }
+}
+
 
  return (
    <View style = {styles.container}>
+
+
 
         <View style={styles.containerHeader}>
 
@@ -84,22 +129,25 @@ const handleExcluirModelo = (modelo) => {
           duration={1000}
           direction='alternate'>
         <View style={styles.smallLine}></View>
+        <Text style={styles.title}>Excluir modelo!</Text>
+          <Text style={styles.text}>Confirme a exclusão do modelo</Text>
+          <Image
+            style={styles.logoIcon}
+            resizeMode='contain'
+            source={require('../../assets/ofisystem_logo_icon.png')}
+          />
 
-        <View style={styles.headerBottons}>
-          <TouchableOpacity
-          style={styles.buttonRegister}
-          onPress={() => navigation.navigate('CadastroModelo')} //cadastrar modelo
-          >
-            <Text style={styles.buttonRegisterFont}>Cadastrar Modelo</Text>
-          </TouchableOpacity>
-        </View>
+
+        
 
         <ScrollView showsVerticalScrollIndicator={false}>
-  {modelos
-    .filter((modelo) => modelo.nomeCategoria === categoria) // Substitua 'NomeCategoria' pelo valor desejado
+  {modeloSelecionado && modelos
+    .filter((modelo) => modelo.id === modeloSelecionado.id) // Substitua 'NomeCategoria' pelo valor desejado
     .map((modelo) => (
       <View style={styles.containerCards} key={modelo.id}>
+        <Text style={styles.modeloSelect}>Modelo Selecionado: </Text>
         <Text style={styles.titleCards}>{modelo.nomeCategoria}</Text>
+        
 
         <View style={styles.buttonCardsA}>
           <View style={styles.buttonCardsB}>
@@ -111,34 +159,50 @@ const handleExcluirModelo = (modelo) => {
             <View style={styles.containerDescriptionText}>
               <Text style={styles.modelDescription}>Modelo</Text>
               
-              <Text style={styles.nameModelDescription}>{modelo.modelo}</Text>
+              
+              <Text style={styles.nameModelDescription}>{modeloSelecionado.modelo}</Text>
+              
               <Text style={styles.subtotalDescription}>Valor: </Text>
             </View>
 
             <View style={styles.containerDescriptionAmount}>
             <View style={styles.headerBottons}>
-          <TouchableOpacity
-          style={styles.bottonEditar} 
-          onPress={() => handleEditarModelo(modelo)} //cadastrar modelo
+            <TouchableOpacity
+          style={styles.bottonExcluir} 
+          onPress={() => sendForm3()} //cadastrar modelo
           > 
-            <Text style={styles.textBottonEditar}>Editar</Text> 
-          </TouchableOpacity>
-          <TouchableOpacity
-          style={styles.bottonExcluir}
-          onPress={() => handleExcluirModelo(modelo)} 
-          >
-            <Text style={styles.textBottonExcluir}>Excluir</Text>
+            <Text style={styles.textBottonExcluir}>Confirmar Exclusão</Text> 
           </TouchableOpacity>
         </View>
         
             
-              <Text style={styles.textValueAmount}>R$ {modelo.valor}</Text>
-            </View>
+              <Text style={styles.textValueAmount}>R$ {modeloSelecionado.valor}</Text>
+            </View> 
           </View>
         </View>
       </View>
     ))}
+    <View>
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Informe o modelo a ser excluído</Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setSelectModel(text)}
+                />
+        
+        </View>
+        <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
+  
+  
+    
 </ScrollView> 
+
 
         </Animatable.View>
 

@@ -160,6 +160,13 @@ const styles = StyleSheet.create({
     color: '#8F9297',
     paddingTop: 17,
   },
+  modeloSelect: {
+    fontSize: 15,
+    color: '#FF7B02',
+    //marginLeft: 6,
+    fontWeight: '900',
+    marginBottom: 10,
+  },
 
   bottomAddRemove: {
     backgroundColor: '#1D1238',
@@ -213,8 +220,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
    },
    bottonEditar: {
-    width: 48,
-    backgroundColor: '#D4F8E7',
+    width: 100,
+    backgroundColor: '#E5FBF1',
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#1FB76F',
@@ -230,11 +237,11 @@ const styles = StyleSheet.create({
 
    },
    bottonExcluir: {
-    width: 52,
+    width: 110,
     backgroundColor: '#ffbdb9',
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#FF0909',
+    borderColor: 'red',
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 2,
@@ -242,7 +249,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 5,
-    marginTop: -2,
+    marginTop: -65,
     marginEnd: 8,
    },
     textBottonEditar: {
@@ -356,7 +363,51 @@ const styles = StyleSheet.create({
   buttonSeeFont: {
     fontSize: 12,
     color: '#FF7B02'
-  }
+  },
+  title: {
+    fontSize: 19,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 2,
+    alignContent: 'center',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 12,
+    color: '#8C8C8C',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+
+    
+  logoIcon: {
+    marginTop: 10,
+    marginBottom: 10,
+    width: 90,
+    height: 90,
+    alignSelf: 'center'
+  },
+  input: {
+  
+    height: 15,
+  },
+  input1: {
+  
+    height: 15,
+  },
+  inputTitle1: {
+    fontSize: 18,
+    color: 'red',
+    fontWeight: '900', 
+    marginTop: 0,
+    marginBottom: 8,
+    //marginLeft: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
 
 });
 

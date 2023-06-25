@@ -2,7 +2,7 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
-const { Sequelize} = require('sequelize');
+const { Sequelize, where} = require('sequelize');
 
 const app=express();
 app.use(cors());
@@ -191,7 +191,87 @@ app.post('/cadastrarCategoria', async (req, res) => {
       }
   });
 
-  
+  app.post('/editarModelo', async (req, res) => {
+    try {
+      let existingmodeloEditar = await modelo.findOne({
+        where: { id: req.body.selectModel }
+      });
+      
+      if (existingmodeloEditar === null) {
+        res.send(JSON.stringify('Mpdelo Não Confere com o Listado Acima'));
+      } else {
+          existingmodeloEditar.modelo=req.body.novoModelo;
+          existingmodeloEditar.valor=req.body.novoValor
+          existingmodeloEditar.save();
+          res.send(JSON.stringify('Modelo Editado Com Sucesso!'));
+
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao editar o modelo' });
+    }
+  });
+
+  app.delete('/excluirModelo', async (req, res) => {
+    try {
+      let existingModeloExcluir = await modelo.findOne({
+        where: { modelo: req.body.selectModel }
+      });
+      
+      if (existingModeloExcluir === null) {
+        res.send(JSON.stringify('Modelo Não Confere com o Listado Acima'));
+      } else {
+        existingModeloExcluir.destroy();
+        res.send(JSON.stringify('Modelo excluído com sucesso!'));
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir o modelo' });
+    }
+  });
+
+  app.delete('/excluirCategoria', async (req, res) => {
+    try {
+      let existingcategoriaExcluir = await categoria.findOne({
+        where: { categoria: req.body.selectCategoria }
+      });
+      
+      if (existingcategoriaExcluir === null) {
+        res.send(JSON.stringify('Categoria Não Confere com a Listada Acima'));
+      } else {
+        if (existingcategoriaExcluir.quantModel > 0 ){
+          res.send(JSON.stringify('Exclusão Falhou! Categoria Possui Modelos Vinculados'));
+        } else {
+        existingcategoriaExcluir.destroy();
+        res.send(JSON.stringify('Categoria excluída com sucesso!'));
+      }
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir a categoria!' });
+    }
+  });
+
+  app.post('/editarCategoria', async (req, res) => {
+    try {
+      let existingcategoriaEditar = await categoria.findOne({
+        where: { categoria: req.body.confirmeCategoria }
+      });
+      
+      if (existingcategoriaEditar === null) {
+        res.send(JSON.stringify('Categoria Não Confere com a Listada Acima'));
+      } else {
+          existingcategoriaEditar.categoria=req.body.novaCategoria;
+          existingcategoriaEditar.descricao=req.body.novaDescricao;
+          existingcategoriaEditar.save();
+          res.send(JSON.stringify('Categoria Editada Com Sucesso!'));
+
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir a categoria!' });
+    }
+  });
 
 
 

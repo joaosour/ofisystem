@@ -12,6 +12,14 @@ import ConfirmacaoCadastroCat from '../pages/ConfirmacaoCadastroCat'
 import CadastroCategoria from '../pages/CadastroCategoria'
 import CadastroModelo from '../pages/CadastroModelo'
 import ConfirmacaoCadastroMod from '../pages/ConfirmacaoCadastroMod'
+import EdicaoModelo from '../pages/EdicaoModelo'
+import ConfirmacaoEdicaoModelo from '../pages/ConfirmacaoEdicaoModelo'
+import ExclusaoModelo from '../pages/ExclusaoModelo'
+import ConfirmacaoExclusaoModelo from '../pages/ConfirmacaoExclusaoModelo'
+import EdicaoCategoria from '../pages/EdicaoCategoria'
+import ConfirmacaoEdicaocategoria from '../pages/ConfirmacaoEdicaoCategoria'
+import ExclusaoCategoria from '../pages/ExclusaoCategoria'
+import ConfirmacaoExclusaoCategoria from '../pages/ConfirmacaoExclusaoCategoria'
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +90,47 @@ export default function Routes() {
             <Stack.Screen
                 name="CadastroModelo"
                 component={CadastroModelo}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="EdicaoModelo"
+                component={EdicaoModelo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoEdicaoModelo"
+                component={ConfirmacaoEdicaoModelo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ExclusaoModelo"
+                component={ExclusaoModelo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoExclusaoModelo"
+                component={ConfirmacaoExclusaoModelo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="EdicaoCategoria"
+                component={EdicaoCategoria}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoEdicaoCategoria"
+                component={ConfirmacaoEdicaocategoria}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ExclusaoCategoria"
+                component={ExclusaoCategoria}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ConfirmacaoExclusaoCategoria"
+                component={ConfirmacaoExclusaoCategoria}
                 options={{ headerShown: false }}
             />
 

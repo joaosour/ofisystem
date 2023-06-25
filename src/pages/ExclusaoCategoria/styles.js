@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   
   containerDescription: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     // backgroundColor: 'green',
     marginLeft: 54,
     justifyContent: 'space-between',
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   containerBottomDescription: {
     width: '100%',
     flexDirection: 'row',
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     bottom: 5,
@@ -144,8 +144,29 @@ const styles = StyleSheet.create({
   },
 
   modelDescription: {
-    color: '#8F9297',
     fontSize: 15,
+    color: '#1D1238',
+    marginLeft: 6,
+    fontWeight: '900',
+  },
+  categoriaSelect: {
+    fontSize: 15,
+    color: '#FF7B02',
+    //marginLeft: 6,
+    fontWeight: '900',
+    marginBottom: 10,
+  },
+
+
+  amountDescription: {
+    // backgroundColor: 'red',
+    fontSize: 25,
+    color: '#FF7B02',
+    marginLeft: 6,
+    fontWeight: '900',
+    // marginTop: -8,
+    // marginBottom: 5,
+    // lineHeight: 40,
   },
 
   nameModelDescription: {
@@ -183,11 +204,20 @@ const styles = StyleSheet.create({
     borderColor: '#1D1238',
    },
 
+
    bottomAddRemoveText: {
     color: 'white',
     fontWeight: '900',
     bottom: 1,
    },
+   textDescription: {
+    flex: 1,
+    fontSize: 12,
+    color: '#8F9297',
+    marginLeft: 6,
+    paddingRight: 5,
+  },
+
 
    buttonAddCart: {
     width: '100%',
@@ -213,8 +243,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
    },
    bottonEditar: {
-    width: 48,
-    backgroundColor: '#D4F8E7',
+    width: 100,
+    backgroundColor: '#ffbdb9',
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#1FB76F',
@@ -230,11 +260,11 @@ const styles = StyleSheet.create({
 
    },
    bottonExcluir: {
-    width: 52,
+    width: 110,
     backgroundColor: '#ffbdb9',
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#FF0909',
+    borderColor: 'red',
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 2,
@@ -242,7 +272,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 5,
-    marginTop: -2,
+    marginTop: -65,
     marginEnd: 8,
    },
     textBottonEditar: {
@@ -356,7 +386,51 @@ const styles = StyleSheet.create({
   buttonSeeFont: {
     fontSize: 12,
     color: '#FF7B02'
-  }
+  },
+  title: {
+    fontSize: 19,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 2,
+    alignContent: 'center',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 12,
+    color: '#8C8C8C',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+
+    
+  logoIcon: {
+    marginTop: 10,
+    marginBottom: 10,
+    width: 90,
+    height: 90,
+    alignSelf: 'center'
+  },
+  input: {
+  
+    height: 15,
+  },
+  input1: {
+  
+    height: 15,
+  },
+  inputTitle1: {
+    fontSize: 18,
+    color: 'red',
+    fontWeight: '900', 
+    marginTop: 0,
+    marginBottom: 8,
+    //marginLeft: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
 
 });
 

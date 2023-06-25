@@ -118,15 +118,39 @@ const styles = StyleSheet.create({
   
   containerDescription: {
     flex: 1,
-    flexDirection: 'column',
-    // backgroundColor: 'green',
+    flexDirection: 'row',
+    // backgroundColor: 'blue',
     marginLeft: 54,
+    justifyContent: 'space-between',
+  },
+  
+  containerDescriptionAB: {
+    flex: 6,
+    // backgroundColor: 'red',
+  },
+  
+  containerDescriptionA: {
+    flex: 1,
+    // backgroundColor: 'yellow',
+  },
+  
+  containerDescriptionB: {
+    flex: 1,
+    // backgroundColor: 'blue',
+
+  },
+  
+  containerDescriptionC: {
+    flex: 3,
+    // backgroundColor: 'green',
+    justifyContent: 'flex-end',
+    marginRight: 10,
   },
 
   containerBottomDescription: {
     width: '100%',
     flexDirection: 'row',
-    // backgroundColor: 'red',
+    backgroundColor: 'red',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     bottom: 5,
@@ -136,28 +160,20 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 12,
     color: '#8F9297',
-    marginLeft: 6,
-    paddingRight: 5,
   },
 
   modelDescription: {
     fontSize: 15,
     color: '#1D1238',
-    marginLeft: 6,
     fontWeight: '900',
-    // marginBottom: -5,
-    // backgroundColor: 'blue'
+
   },
 
   amountDescription: {
-    // backgroundColor: 'red',
     fontSize: 25,
     color: '#FF7B02',
-    marginLeft: 6,
     fontWeight: '900',
-    // marginTop: -8,
-    // marginBottom: 5,
-    // lineHeight: 40,
+
   },
 
   containerCards: {
@@ -220,24 +236,55 @@ const styles = StyleSheet.create({
 
   buttonSee: {
     fontSize: 50,
-    backgroundColor: '#FFF6ED',
-    borderRadius: 8,
+    height: 18,
+    backgroundColor: '#E5FBF1',
+    borderRadius: 7,
     borderWidth: 1,
-    borderColor: '#FF7B02',
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 2,
-    paddingBottom: 2,
-    marginRight: 10,
+    borderColor: '#2ADB86',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+    
+  },
+
+  buttonSeeFont: {
+    fontSize: 12,
+    color: '#2AD86'
+  },
+
+  buttonEdit: {
+    fontSize: 50,
+    height: 18,
+    backgroundColor: '#F0EDF9',
+    borderRadius: 7,
+    borderWidth: 1,
+    borderColor: '#1D1238',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 5,
   },
 
-  buttonSeeFont: {
+  buttonEditFont: {
     fontSize: 12,
-    color: '#FF7B02'
-  }
+    color: '#1D1238'
+  },
+
+  textBottonExcluir: {
+    fontSize: 12,
+    color: '#F93F17',
+  },
+
+  bottonExcluir: {
+    fontSize: 50,
+    height: 18,
+    backgroundColor: '#FFEEEB',
+    borderRadius: 7,
+    borderWidth: 1,
+    borderColor: '#F93F17',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+   },
 
 });
 
