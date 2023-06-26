@@ -3,9 +3,16 @@ const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
 
+<<<<<<< HEAD
 
 const { Sequelize, where} = require('sequelize');
 
+=======
+const { Sequelize, where} = require('sequelize');
+
+const { Sequelize, where} = require('sequelize');
+
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
 const app=express();
 app.use(cors());
@@ -204,6 +211,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
       if (existingmodeloEditar === null) {
         res.send(JSON.stringify('Mpdelo Não Confere com o Listado Acima'));
       } else {
+<<<<<<< HEAD
 
         if (req.body.novoModelo != null){
           existingmodeloEditar.modelo=req.body.novoModelo;
@@ -224,6 +232,10 @@ app.post('/cadastrarCategoria', async (req, res) => {
       }
       
 
+=======
+          existingmodeloEditar.modelo=req.body.novoModelo;
+          existingmodeloEditar.valor=req.body.novoValor
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
           existingmodeloEditar.save();
           res.send(JSON.stringify('Modelo Editado Com Sucesso!'));
 
@@ -232,7 +244,10 @@ app.post('/cadastrarCategoria', async (req, res) => {
       console.error(error);
       res.status(500).json({ error: 'Erro ao editar o modelo' });
     }
+<<<<<<< HEAD
   });
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
   app.get('/editarModelo', async(req, res)=>{
     try {
@@ -244,7 +259,11 @@ app.post('/cadastrarCategoria', async (req, res) => {
         res.status(500).json({ error: 'Erro ao listar as modelos.' });
       }
 
+<<<<<<< HEAD
     });
+=======
+  });
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
   app.delete('/excluirModelo', async (req, res) => {
     try {
@@ -296,6 +315,7 @@ app.post('/cadastrarCategoria', async (req, res) => {
       if (existingcategoriaEditar === null) {
         res.send(JSON.stringify('Categoria Não Confere com a Listada Acima'));
       } else {
+<<<<<<< HEAD
           if (req.body.novaCategoria != null){
               existingcategoriaEditar.categoria=req.body.novaCategoria;
 
@@ -319,6 +339,10 @@ app.post('/cadastrarCategoria', async (req, res) => {
           } else {
             existingcategoriaEditar.url_img=existingcategoriaEditar.url_img;
           }
+=======
+          existingcategoriaEditar.categoria=req.body.novaCategoria;
+          existingcategoriaEditar.descricao=req.body.novaDescricao;
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
           existingcategoriaEditar.save();
           res.send(JSON.stringify('Categoria Editada Com Sucesso!'));
 

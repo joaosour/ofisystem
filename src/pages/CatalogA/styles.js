@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
 
   containerDescriptionText: {
     flex: 1,
-    // backgroundColor: 'red',
+    //backgroundColor: 'red',
   }, 
 
   containerDescriptionAmount: {
@@ -238,6 +238,47 @@ const styles = StyleSheet.create({
     // backgroundColor:  'red',
     paddingRight: 10,
    },
+   bottonEditar: {
+    width: 48,
+    backgroundColor: '#D4F8E7',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+    marginTop: -65,
+    marginEnd: 8,
+
+   },
+   bottonExcluir: {
+    width: 52,
+    backgroundColor: '#ffbdb9',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#FF0909',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+    marginTop: -2,
+    marginEnd: 8,
+   },
+    textBottonEditar: {
+      fontSize: 12,
+      color: '#1FB76F',
+    },
+    textBottonExcluir: {
+      fontSize: 12,
+      color: '#FF0909',
+    },
 
    buttonEdit: {
     height: 20,

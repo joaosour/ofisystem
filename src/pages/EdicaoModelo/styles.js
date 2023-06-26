@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     marginRight: 14,
   },
 
+<<<<<<< HEAD
   containerAB: {
     flex: 1,
     flexDirection: 'row',
@@ -118,6 +119,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
     color: '#3E3E3E',
     borderRadius: 10,
+=======
+  titleCards:{
+    fontSize: 22,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 10,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   },
   
   headerLeft: {
@@ -245,14 +253,22 @@ const styles = StyleSheet.create({
   },
 
   nameModelDescription: {
+<<<<<<< HEAD
     fontSize: 17,
+=======
+    fontSize: 15,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     fontWeight: '900',
     color: '#1D1238',
     marginBottom: 35,
   },
 
   subtotalDescription: {
+<<<<<<< HEAD
     fontSize: 17,
+=======
+    fontSize: 15,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     color: '#8F9297',
     paddingTop: 17,
   },
@@ -433,6 +449,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red'
   },
 
+<<<<<<< HEAD
   buttonImageEdit: {
     // flex: 1,
     width: '25%',
@@ -450,6 +467,8 @@ const styles = StyleSheet.create({
     paddingLeft: 28,
   },
 
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   buttonTexts: {
     fontWeight: '900',
     fontSize: 14,
@@ -521,6 +540,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
+<<<<<<< HEAD
   button: {
     backgroundColor: '#1D1238',
     height: 50,
@@ -553,6 +573,8 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center'
   },
 
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
 });
 

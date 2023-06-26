@@ -18,11 +18,18 @@ const styles = StyleSheet.create({
   },
 
   titleCards:{
+<<<<<<< HEAD
     fontSize: 16,
     color: '#1D1238',
     fontWeight: '900',
     marginBottom: '2%',
     // backgroundColor: 'red',
+=======
+    fontSize: 22,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 10,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   },
   
   headerLeft: {
@@ -98,6 +105,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
+<<<<<<< HEAD
   containerD: {
     width: '100%',
     justifyContent: 'space-between',    
@@ -114,6 +122,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   containerDescriptionText: {
     flex: 1,
     //backgroundColor: 'red',
@@ -424,6 +434,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+<<<<<<< HEAD
   inputBackgroundD: {
     flexDirection: 'row',
     height: '65%',
@@ -478,6 +489,8 @@ const styles = StyleSheet.create({
     marginRight: 30,
     textAlignVertical: 'center'
   },
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
 
 });

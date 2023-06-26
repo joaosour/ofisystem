@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   },
 
   titleCards:{
+<<<<<<< HEAD
     fontSize: 18,
     color: '#1D1238',
     fontWeight: '900',
@@ -82,6 +83,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 
+=======
+    fontSize: 22,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   headerLeft: {
     flexDirection: 'row',
     // backgroundColor: 'blue',
@@ -150,7 +160,11 @@ const styles = StyleSheet.create({
   containerDescription: {
     flex: 1,
     flexDirection: 'column',
+<<<<<<< HEAD
     // backgroundColor: 'blue',
+=======
+    // backgroundColor: 'green',
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     marginLeft: 54,
     justifyContent: 'space-between',
   },
@@ -202,6 +216,7 @@ const styles = StyleSheet.create({
   },
 
   modelDescription: {
+<<<<<<< HEAD
     fontSize: 18,
     letterSpacing: 0.5,
     color: '#1D1238',
@@ -210,6 +225,13 @@ const styles = StyleSheet.create({
 
   },
 
+=======
+    fontSize: 15,
+    color: '#1D1238',
+    marginLeft: 6,
+    fontWeight: '900',
+  },
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   categoriaSelect: {
     fontSize: 15,
     color: '#FF7B02',
@@ -223,6 +245,10 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     fontSize: 25,
     color: '#FF7B02',
+<<<<<<< HEAD
+=======
+    marginLeft: 6,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     fontWeight: '900',
     // marginTop: -8,
     // marginBottom: 5,
@@ -270,6 +296,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     bottom: 1,
    },
+<<<<<<< HEAD
 
    textDescription: {
     flex: 1,
@@ -279,6 +306,14 @@ const styles = StyleSheet.create({
     color: '#8F9297',
     // backgroundColor: 'purple'
     padding: 1,
+=======
+   textDescription: {
+    flex: 1,
+    fontSize: 12,
+    color: '#8F9297',
+    marginLeft: 6,
+    paddingRight: 5,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   },
 
 
@@ -305,6 +340,7 @@ const styles = StyleSheet.create({
     // backgroundColor:  'red',
     paddingRight: 10,
    },
+<<<<<<< HEAD
 
    button: {
     backgroundColor: '#1D1238',
@@ -324,6 +360,25 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
 
+=======
+   bottonEditar: {
+    width: 100,
+    backgroundColor: '#E5FBF1',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+    marginTop: -65,
+    marginEnd: 8,
+
+   },
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
    bottonExcluir: {
     width: 110,
     backgroundColor: '#ffbdb9',
@@ -340,7 +395,14 @@ const styles = StyleSheet.create({
     marginTop: -65,
     marginEnd: 8,
    },
+<<<<<<< HEAD
 
+=======
+    textBottonEditar: {
+      fontSize: 12,
+      color: '#1FB76F',
+    },
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     textBottonExcluir: {
       fontSize: 12,
       color: '#FF0909',
@@ -388,10 +450,18 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#1FB76F'
   },
+<<<<<<< HEAD
   buttonCardsA: {
     flexDirection: 'row',
     width: '100%',
     height: 115,
+=======
+
+  buttonCardsA: {
+    flexDirection: 'row',
+    width: '100%',
+    height: 110,
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
     backgroundColor: '#FFF',
     borderRadius: 21,
     shadowColor: '#C1C1C1',
@@ -421,6 +491,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red'
   },
 
+<<<<<<< HEAD
   buttonImageEdit: {
     // flex: 1,
     width: '25%',
@@ -432,6 +503,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
 
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   buttonTexts: {
     fontWeight: '900',
     fontSize: 14,
@@ -485,6 +558,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
+<<<<<<< HEAD
     flex: 5,
     height: 80,
     padding: 12,
@@ -508,6 +582,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
     color: '#3E3E3E',
     borderRadius: 10,
+=======
+    height: 15,
+    bottom: 5,
+    textTransform: 'uppercase',
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   },
 
   input1: {
@@ -527,6 +606,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
+<<<<<<< HEAD
   popupErrorText: {
     fontSize: 15,
     color: '#EA4335',
@@ -541,6 +621,8 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center'
   },
 
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 });
 
 export default styles;

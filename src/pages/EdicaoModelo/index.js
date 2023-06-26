@@ -20,8 +20,12 @@ const { modeloSelecionado } = route.params;
 const [selectModel, setSelectModel]=useState(null);
 const [msg, setMsg] = useState(null);
 const [novoModelo, setNovoModelo]=useState(null);
+<<<<<<< HEAD
 const [novoValor, setNovoValor]=useState(null);
 const [novaImagemMod, setNovaImagemMod]=useState(null);
+=======
+const [novoValor, setNovoValor]=useState(null)
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
 const [IsFocusedInput1, setIsFocusedInput1] = useState(false)
   const [IsFocusedInput2, setIsFocusedInput2] = useState(false)
@@ -76,7 +80,10 @@ async function sendForm5(){
         selectModel: modeloSelecionado.id,
         novoModelo: novoModelo,
         novoValor: novoValor,
+<<<<<<< HEAD
         novaImagemMod: novaImagemMod,
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
       }),
       headers: {
         Accept: 'application/json',
@@ -147,7 +154,11 @@ async function sendForm5(){
     .filter((modelo) => modelo.id === modeloSelecionado.id) // Substitua 'NomeCategoria' pelo valor desejado
     .map((modelo) => (
       <View style={styles.containerCards} key={modelo.id}>
+<<<<<<< HEAD
 
+=======
+        <Text style={styles.modeloSelect}>Modelo Selecionado: </Text>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
         <Text style={styles.titleCards}>{modelo.nomeCategoria}</Text>
         
 
@@ -164,11 +175,24 @@ async function sendForm5(){
               
               <Text style={styles.nameModelDescription}>{modeloSelecionado.modelo}</Text>
               
+<<<<<<< HEAD
               <Text style={styles.subtotalDescription}>Valor </Text>
+=======
+              <Text style={styles.subtotalDescription}>Valor: </Text>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
             </View>
 
             <View style={styles.containerDescriptionAmount}>
             <View style={styles.headerBottons}>
+<<<<<<< HEAD
+=======
+            <TouchableOpacity
+          style={styles.bottonEditar} 
+          onPress={() => sendForm5()} //cadastrar modelo
+          > 
+            <Text style={styles.textBottonEditar}>Confirmar edição</Text> 
+          </TouchableOpacity>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
         </View>
         
             
@@ -178,6 +202,7 @@ async function sendForm5(){
         </View>
       </View>
     ))}
+<<<<<<< HEAD
 
 
 
@@ -241,6 +266,35 @@ async function sendForm5(){
 </TouchableOpacity>
 
             <Text style= {styles.popupErrorText}>{msg}</Text>
+=======
+    <View>
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Insira novo modelo </Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setNovoModelo(text)}
+                />
+
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Insira novo valor </Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setNovoValor(text)}
+                />
+        
+        </View>
+        <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   
   
     

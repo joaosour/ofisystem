@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     marginBottom: 10,
   },
+<<<<<<< HEAD
 
   titleCardsSelect:{
     fontSize: 16,
@@ -31,6 +32,8 @@ const styles = StyleSheet.create({
     marginBottom: '2%',
     // backgroundColor: 'red',
   },
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   
   headerLeft: {
     flexDirection: 'row',
@@ -438,6 +441,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+<<<<<<< HEAD
   button: {
     backgroundColor: '#FF7B02',
     height: 50,
@@ -524,6 +528,8 @@ const styles = StyleSheet.create({
     marginRight: 30,
     textAlignVertical: 'center'
   },
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
 
 });

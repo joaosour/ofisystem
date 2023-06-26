@@ -166,7 +166,18 @@ async function sendForm3() {
             </View>
 
             <View style={styles.containerDescriptionAmount}>
+<<<<<<< HEAD
             
+=======
+            <View style={styles.headerBottons}>
+            <TouchableOpacity
+          style={styles.bottonExcluir} 
+          onPress={() => sendForm3()} //cadastrar modelo
+          > 
+            <Text style={styles.textBottonExcluir}>Confirmar Exclusão</Text> 
+          </TouchableOpacity>
+        </View>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
         
             
               <Text style={styles.textValueAmount}>R$ {modeloSelecionado.valor}</Text>
@@ -175,6 +186,7 @@ async function sendForm3() {
         </View>
       </View>
     ))}
+<<<<<<< HEAD
 
 
         <View style={styles.containerCD}>
@@ -205,6 +217,24 @@ async function sendForm3() {
 
             <Text style= {styles.popupErrorText}>{msg}</Text>
 
+=======
+    <View>
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Informe o modelo a ser excluído</Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setSelectModel(text)}
+                />
+        
+        </View>
+        <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
   
   
     

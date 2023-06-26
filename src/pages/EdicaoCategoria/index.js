@@ -21,7 +21,10 @@ const [selectCategoria, setSelectCategoria]=useState(null);
 const [msg, setMsg] = useState(null);
 const [novaCategoria, setNovaCategoria]=useState(null);
 const [novaDescricao, setNovaDescricao]=useState(null);
+<<<<<<< HEAD
 const [novaImagemCat, setNovaImagemCat]=useState(null);
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 const [confirmeCategoria, setConfirmeCategoria]=useState(null);
 
 
@@ -91,8 +94,11 @@ async function sendForm4(){
         confirmeCategoria: categoriaSelecionada.categoria,
         novaCategoria: novaCategoria,
         novaDescricao: novaDescricao,
+<<<<<<< HEAD
         novaImagemCat: novaImagemCat,
         
+=======
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
       }),
       headers: {
         Accept: 'application/json',
@@ -164,7 +170,11 @@ async function sendForm4(){
         .filter((categoria) => categoria.id === categoriaSelecionada.id)
         .map((categoria) => (
             <View style={styles.containerCards} key={categoria.id}>
+<<<<<<< HEAD
               {/* <Text style={styles.categoriaSelect}>Categoria Selecionada: </Text> */}
+=======
+              <Text style={styles.categoriaSelect}>Categoria Selecionada: </Text>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
               <Text style={styles.titleCards}>{categoria.categoria}</Text>
               
               <View style={styles.buttonCardsA}>
@@ -175,8 +185,21 @@ async function sendForm4(){
                 <View style={styles.containerDescription}>
                   
                   <Text style={styles.textDescription}>{categoria.descricao}</Text>
+<<<<<<< HEAD
                   
                   <Text style={styles.modelDescription}>Modelos</Text>
+=======
+                  <View style={styles.headerBottons}>
+            <TouchableOpacity
+          style={styles.bottonEditar} 
+          onPress={() => sendForm4()} //cadastrar modelo
+          > 
+            <Text style={styles.textBottonEditar}>Confirmar edição</Text> 
+          </TouchableOpacity>
+        </View>
+                  
+                  <Text style={styles.modelDescription}>Modelos:</Text>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
                   <View style={styles.containerBottomDescription}>
                     <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
                   </View>
@@ -187,6 +210,7 @@ async function sendForm4(){
             </View>
           ))}
 
+<<<<<<< HEAD
 
 
 
@@ -274,6 +298,35 @@ async function sendForm4(){
 
             <Text style= {styles.popupErrorText}>{msg}</Text>
 
+=======
+    <View>
+
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Informe a Nova Categoria </Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setNovaCategoria(text)}
+      />
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Informe a Nova Descrição </Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setNovaDescricao(text)}
+      />
+        
+        </View>
+        <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
 
           
   

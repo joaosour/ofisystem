@@ -160,7 +160,18 @@ async function sendForm4() {
                 <View style={styles.containerDescription}>
                   
                   <Text style={styles.textDescription}>{categoria.descricao}</Text>
+<<<<<<< HEAD
 
+=======
+                  <View style={styles.headerBottons}>
+            <TouchableOpacity
+          style={styles.bottonExcluir} 
+          onPress={() => sendForm4()} //cadastrar modelo
+          > 
+            <Text style={styles.textBottonExcluir}>Confirmar Exclusão</Text> 
+          </TouchableOpacity>
+        </View>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
                   
                   <Text style={styles.modelDescription}>Modelos:</Text>
                   <View style={styles.containerBottomDescription}>
@@ -173,6 +184,7 @@ async function sendForm4() {
             </View>
           ))}
 
+<<<<<<< HEAD
           
         <View style={styles.containerCD}>
 
@@ -207,6 +219,35 @@ async function sendForm4() {
 
         </Animatable.View>
 
+=======
+    <View>
+      <Text style={[styles.titleCards, {fontSize: 17}]}>Confirme a categoria </Text>
+      <TextInput
+                placeholder='Digite aqui...'
+                placeholderTextColor='#B1B1B1'
+                style={styles.input}
+                onFocus={handleFocusInput2}
+                onBlur={handleBlurInput2}
+                
+                onChangeText={text=>setSelectCategoria(text)}
+                />
+        
+        </View>
+        <View>
+            <Text style={styles.inputTitle1}>{msg}</Text>
+          </View>
+
+          
+  
+  
+    
+</ScrollView> 
+
+
+        </Animatable.View>
+
+
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
    </View>
   );
 }

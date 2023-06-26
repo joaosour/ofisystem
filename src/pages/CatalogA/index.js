@@ -140,7 +140,22 @@ const handleExcluirModelo = (modelo) => {
 
             <View style={styles.containerDescriptionAmount}>
             <View style={styles.headerBottons}>
+<<<<<<< HEAD
 
+=======
+          <TouchableOpacity
+          style={styles.bottonEditar} 
+          onPress={() => handleEditarModelo(modelo)} //cadastrar modelo
+          > 
+            <Text style={styles.textBottonEditar}>Editar</Text> 
+          </TouchableOpacity>
+          <TouchableOpacity
+          style={styles.bottonExcluir}
+          onPress={() => handleExcluirModelo(modelo)} 
+          >
+            <Text style={styles.textBottonExcluir}>Excluir</Text>
+          </TouchableOpacity>
+>>>>>>> 9dc045f259d299b0d067ce86a600634284b94db7
         </View>
         
             
