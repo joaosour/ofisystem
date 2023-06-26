@@ -17,36 +17,107 @@ const styles = StyleSheet.create({
     marginRight: 14,
   },
 
-  
-  containerTitleCards: {
+  containerAB: {
     flex: 1,
     flexDirection: 'row',
-    // backgroundColor: 'red',
     justifyContent: 'space-between',
+    // backgroundColor: 'yellow',
+    height: 75,
+    marginBottom: 10,
+  },
+
+  containerA: {
+    width: '35%',
+    justifyContent: 'space-between',
+    // backgroundColor: 'purple',
+    height: 75,
+  },
+
+  inputBackgroundA: {
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
+
+  containerB: {
+    width: '55%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 75,
+  },
+
+  inputBackgroundB: {
+    flexDirection: 'row',
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+    resizeMode: 'contain',
+    // justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  
+  containerCD: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // backgroundColor: 'yellow',
+    height: 75,
+    marginBottom: 20,
+  },
+
+  containerC: {
+    width: '55%',
+    justifyContent: 'space-between',
+    // backgroundColor: 'purple',
+    height: 75,
+  },
+
+  inputBackgroundC: {
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
+
+  containerD: {
+    width: '100%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 75,
+  },
+
+  inputBackgroundD: {
+    flexDirection: 'row',
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+    resizeMode: 'contain',
+    // justifyContent: 'space-between',
     alignItems: 'center',
   },
 
-  containerButtons: {
-    flexDirection: 'row',
-    width: '40%',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    // backgroundColor: 'green',
-    marginRight: 10,
-  },
 
   titleCards:{
-    fontSize: 22,
+    fontSize: 16,
     color: '#1D1238',
     fontWeight: '900',
-    letterSpacing: 0.5,
-    // marginBottom: 10,
+    marginBottom: '2%',
+    // backgroundColor: 'red',
   },
 
-  
-  arrowRight: {
-    resizeMode: 'contain',
-    width: '3.5%',
+    inputCategoria: {
+    flex: 1,
+    fontSize: 17,
+    padding: 12,
+    height: 40,
+    paddingRight: 4,
+    fontWeight: 'bold',
+    backgroundColor: '#F4F4F4',
+    color: '#3E3E3E',
+    borderRadius: 10,
   },
   
   headerLeft: {
@@ -124,7 +195,7 @@ const styles = StyleSheet.create({
 
   containerDescriptionText: {
     flex: 1,
-    // backgroundColor: 'red',
+    //backgroundColor: 'red',
   }, 
 
   containerDescriptionAmount: {
@@ -174,17 +245,23 @@ const styles = StyleSheet.create({
   },
 
   nameModelDescription: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: '900',
     color: '#1D1238',
     marginBottom: 35,
   },
 
   subtotalDescription: {
-    fontSize: 16,
+    fontSize: 17,
     color: '#8F9297',
     paddingTop: 17,
-    bottom: 5,
+  },
+  modeloSelect: {
+    fontSize: 15,
+    color: '#FF7B02',
+    //marginLeft: 6,
+    fontWeight: '900',
+    marginBottom: 10,
   },
 
   bottomAddRemove: {
@@ -231,42 +308,54 @@ const styles = StyleSheet.create({
    },
 
    textValueAmount: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '900',
     color: '#FF7B02',
     bottom: 8,
     // backgroundColor:  'red',
     paddingRight: 10,
    },
-
-   buttonEdit: {
-    height: 20,
-    paddingHorizontal: '5%',
-    backgroundColor: '#1D1238',
-    borderRadius: 7,
+   bottonEditar: {
+    width: 100,
+    backgroundColor: '#E5FBF1',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    marginBottom: 5,
+    marginTop: -65,
+    marginEnd: 8,
 
-  buttonEditFont: {
-    fontSize: 10,
-    color: '#fff'
-  },
-
-  textButtonExcluir: {
-    fontSize: 10,
-    color: '#fff',
-  },
-
-  buttonExcluir: {
-    fontSize: 50,
-    height: 20,
-    paddingHorizontal: '5%',
-    backgroundColor: '#FF7B02',
-    borderRadius: 7,
-    alignItems: 'center',
-    justifyContent: 'center',
    },
+   bottonExcluir: {
+    width: 110,
+    backgroundColor: '#ffbdb9',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'red',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 5,
+    marginTop: -65,
+    marginEnd: 8,
+   },
+    textBottonEditar: {
+      fontSize: 12,
+      color: '#1FB76F',
+    },
+    textBottonExcluir: {
+      fontSize: 12,
+      color: '#FF0909',
+    },
 
    fontButtonAddCart: {
     fontSize: 11,
@@ -284,35 +373,37 @@ const styles = StyleSheet.create({
       marginBottom: 15,
     },
 
-  headerButtons: {
+  headerBottons: {
     height: 25,
     // backgroundColor: 'red',
-    // alignItems: 'flex-end',
+    alignItems: 'flex-end',
   },
 
   buttonRegister: {
-    height: 25,
-    width: '97%',
-    backgroundColor: '#1D1238',
-    borderRadius: 10,
+    width: 105,
+    backgroundColor: '#D4F8E7',
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#1D1238',
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: '5%',
+    marginBottom: 5,
   },
 
 
   buttonRegisterFont: {
     fontSize: 12,
-    color: '#FFF',
-    fontWeight: 'bold',
+    color: '#1FB76F'
   },
-  
+
   buttonCardsA: {
     flexDirection: 'row',
     width: '100%',
-    height: 115,
+    height: 110,
     backgroundColor: '#FFF',
     borderRadius: 21,
     shadowColor: '#C1C1C1',
@@ -342,6 +433,23 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red'
   },
 
+  buttonImageEdit: {
+    // flex: 1,
+    width: '25%',
+    height: '70%',
+    marginLeft: '5%',
+    resizeMode: 'contain',
+    // backgroundColor: 'purple',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+
+  textButtonImage: {
+    marginTop: -20,
+    alignSelf: 'center',
+    paddingLeft: 28,
+  },
+
   buttonTexts: {
     fontWeight: '900',
     fontSize: 14,
@@ -368,7 +476,83 @@ const styles = StyleSheet.create({
   buttonSeeFont: {
     fontSize: 12,
     color: '#FF7B02'
-  }
+  },
+  title: {
+    fontSize: 19,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 2,
+    alignContent: 'center',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 12,
+    color: '#8C8C8C',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+
+    
+  logoIcon: {
+    marginTop: 10,
+    marginBottom: 10,
+    width: 90,
+    height: 90,
+    alignSelf: 'center'
+  },
+  input: {
+  
+    height: 15,
+  },
+  input1: {
+  
+    height: 15,
+  },
+  inputTitle1: {
+    fontSize: 18,
+    color: 'red',
+    fontWeight: '900', 
+    marginTop: 0,
+    marginBottom: 8,
+    //marginLeft: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
+  button: {
+    backgroundColor: '#1D1238',
+    height: 50,
+    width: '100%',
+    fontSize: 16,
+    marginBottom: 7,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+
+  buttonText: {
+    fontSize: 13,
+    color: '#FFF',
+    fontWeight: 'bold'
+  },
+
+  popupErrorText: {
+    fontSize: 15,
+    color: '#EA4335',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#FFF',//'#EA4335',
+    marginTop: 5,
+    borderRadius: 10,
+    height: 50,
+    marginLeft: 30,
+    marginRight: 30,
+    textAlignVertical: 'center'
+  },
+
 
 });
 

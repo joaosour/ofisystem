@@ -57,8 +57,6 @@ async function sendForm3(){
   }
 };
 
-
-
  return (
    <View style = {styles.container}>
 
@@ -97,6 +95,84 @@ async function sendForm3(){
             source={require('../../assets/ofisystem_logo_icon.png')}
           />
 
+
+
+
+
+          <View style={styles.containerAB}>
+
+          <View style={styles.containerA}>
+            <Text style={styles.titleCards}>Modelo</Text>
+            <View style={styles.inputBackgroundA}>
+                        <TextInput
+                        placeholder='Modelo...'
+                        placeholderTextColor='#B1B1B1'
+                        style={styles.inputCategoria}
+                        multiline={false}
+                        numberOfLines={1}
+                        onChangeText={text=> setNovoModelo(text)}
+                      /> 
+            </View>
+          </View>
+
+          <View style={styles.containerB}>
+            <Text style={styles.titleCards}>Imagem</Text>
+            <View style={styles.inputBackgroundB}>
+              <Image style={styles.buttonImage} source={require('../../assets/imageInsert.png')}/>
+              <TextInput
+                      style={[styles.inputCategoria, {marginLeft: 0}]}
+                      placeholder='Imagem URL'
+                      placeholderTextColor='#B1B1B1'
+                      numberOfLines={1}
+                      onChangeText={text=> setNovaImgmod(text)}
+              />
+            </View>
+          </View>
+
+          </View>
+
+          <View style={styles.containerCD}>
+
+          <View style={styles.containerC}>
+            <Text style={styles.titleCards}>Categoria</Text>
+            <View style={styles.inputBackgroundC}>
+                        <TextInput
+                        placeholder='Categoria...'
+                        placeholderTextColor='#B1B1B1'
+                        style={styles.inputCategoria}
+                        multiline={false}
+                        numberOfLines={1}
+                        onChangeText={text=> setNovaCat(text)}
+                      /> 
+            </View>
+          </View>
+
+          <View style={styles.containerD}>
+            <Text style={styles.titleCards}>Valor </Text>
+            <View style={styles.inputBackgroundD}>
+                        <TextInput
+                        placeholder='R$...'
+                        placeholderTextColor='#B1B1B1'
+                        style={styles.inputCategoria}
+                        multiline={false}
+                        numberOfLines={1}
+                        onChangeText={text=> setNovoValor(text)}
+                      /> 
+            </View>
+          </View>
+
+          </View>
+
+
+          <TouchableOpacity style = {styles.button} onPress={ () => sendForm3()}>
+          <Text style = {styles.buttonText}>CONCLUIR CADASTRO</Text>
+          </TouchableOpacity>
+
+
+
+
+
+{/* 
           <View style={styles.containerCards}>
            
             <Text style={[styles.titleCards
@@ -162,12 +238,11 @@ async function sendForm3(){
         </View>
 
             </View>
-          </View>
+          </View> */}
                 
+            <Text style= {styles.popupErrorText}>{msg}</Text>
 
-          <View>
-            <Text style={styles.inputTitle1}>{msg}</Text>
-          </View>
+
         </ScrollView> 
 
         </Animatable.View>

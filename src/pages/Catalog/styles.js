@@ -17,11 +17,34 @@ const styles = StyleSheet.create({
     marginRight: 14,
   },
 
+  containerTitleCards: {
+    flex: 1,
+    flexDirection: 'row',
+    // backgroundColor: 'red',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  containerButtons: {
+    flexDirection: 'row',
+    width: '45%',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    // backgroundColor: 'green',
+    marginRight: 10,
+  },
+
   titleCards:{
     fontSize: 22,
     color: '#1D1238',
     fontWeight: '900',
-    marginBottom: 10,
+    letterSpacing: 0.5,
+    // marginBottom: 10,
+  },
+
+  arrowRight: {
+    resizeMode: 'contain',
+    width: '3.5%',
   },
   
   headerLeft: {
@@ -79,31 +102,23 @@ const styles = StyleSheet.create({
     marginBottom: 34,
   },
 
-  headerBottons: {
-    height: 25,
-    // backgroundColor: 'red',
-    alignItems: 'flex-end',
-  },
-
   buttonRegister: {
-    width: 120,
-    backgroundColor: '#D4F8E7',
-    borderRadius: 8,
+    height: 25,
+    width: '97%',
+    backgroundColor: '#1D1238',
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#1FB76F',
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 2,
-    paddingBottom: 2,
+    borderColor: '#1D1238',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 5,
+    marginBottom: '5%',
   },
 
 
   buttonRegisterFont: {
     fontSize: 12,
-    color: '#1FB76F'
+    color: '#FFF',
+    fontWeight: 'bold',
   },
 
   containerForm: {
@@ -118,9 +133,35 @@ const styles = StyleSheet.create({
   
   containerDescription: {
     flex: 1,
-    flexDirection: 'column',
-    // backgroundColor: 'green',
+    flexDirection: 'row',
+    // backgroundColor: 'blue',
     marginLeft: 54,
+    justifyContent: 'space-between',
+  },
+  
+  containerDescriptionAB: {
+    flex: 6,
+    marginTop: '6%',
+    // backgroundColor: 'red',
+  },
+  
+  containerDescriptionA: {
+    flex: 1,
+    // backgroundColor: 'yellow',
+  },
+  
+  containerDescriptionB: {
+    flex: 1.2,
+    // backgroundColor: 'blue',
+
+  },
+  
+  containerDescriptionC: {
+    flex: 1,
+    // backgroundColor: 'green',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginRight: 10,
   },
 
   containerBottomDescription: {
@@ -134,37 +175,40 @@ const styles = StyleSheet.create({
 
   textDescription: {
     flex: 1,
-    fontSize: 12,
+    width: '98%',
+    fontSize: 14,
+    letterSpacing: 0.5,
     color: '#8F9297',
-    marginLeft: 6,
-    paddingRight: 5,
+    // backgroundColor: 'purple'
+    padding: 1,
   },
 
   modelDescription: {
-    fontSize: 15,
+    fontSize: 20,
+    letterSpacing: 0.5,
     color: '#1D1238',
-    marginLeft: 6,
     fontWeight: '900',
-    // marginBottom: -5,
-    // backgroundColor: 'blue'
+
+  },
+
+  containerAmount: {
+    // flex: 1,
+    flexDirection: 'row',
   },
 
   amountDescription: {
-    // backgroundColor: 'red',
+    flex: 1,
     fontSize: 25,
     color: '#FF7B02',
-    marginLeft: 6,
     fontWeight: '900',
-    // marginTop: -8,
-    // marginBottom: 5,
-    // lineHeight: 40,
+    // backgroundColor: 'purple'
   },
 
   containerCards: {
     flexDirection: 'column',
     justifyContent: 'space-between',
     // alignItems: 'center',
-    // backgroundColor: 'red'
+    // backgroundColor: 'red',
     marginBottom: -10,
   },
   
@@ -181,7 +225,7 @@ const styles = StyleSheet.create({
   buttonCardsA: {
     flexDirection: 'row',
     width: '100%',
-    height: 110,
+    height: 115,
     backgroundColor: '#FFF',
     borderRadius: 21,
     shadowColor: '#C1C1C1',
@@ -220,24 +264,52 @@ const styles = StyleSheet.create({
 
   buttonSee: {
     fontSize: 50,
-    backgroundColor: '#FFF6ED',
-    borderRadius: 8,
+    height: 18,
+    paddingHorizontal: '5%',
+    backgroundColor: '#fff',
+    borderRadius: 7,
     borderWidth: 1,
-    borderColor: '#FF7B02',
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 2,
-    paddingBottom: 2,
-    marginRight: 10,
+    borderColor: '#1D1238',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 5,
+    marginBottom: 2,
+    
   },
 
   buttonSeeFont: {
-    fontSize: 12,
-    color: '#FF7B02'
-  }
+    fontSize: 10,
+    color: '#1D1238',
+    fontWeight: 'bold',
+  },
+
+  buttonEdit: {
+    height: 20,
+    paddingHorizontal: '5%',
+    backgroundColor: '#1D1238',
+    borderRadius: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  buttonEditFont: {
+    fontSize: 10,
+    color: '#fff'
+  },
+
+  textButtonExcluir: {
+    fontSize: 10,
+    color: '#fff',
+  },
+
+  buttonExcluir: {
+    fontSize: 50,
+    height: 20,
+    paddingHorizontal: '5%',
+    backgroundColor: '#FF7B02',
+    borderRadius: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
 
 });
 

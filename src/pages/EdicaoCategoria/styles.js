@@ -17,38 +17,71 @@ const styles = StyleSheet.create({
     marginRight: 14,
   },
 
-  
-  containerTitleCards: {
-    flex: 1,
-    flexDirection: 'row',
-    // backgroundColor: 'red',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-
-  containerButtons: {
-    flexDirection: 'row',
-    width: '40%',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    // backgroundColor: 'green',
-    marginRight: 10,
-  },
-
   titleCards:{
-    fontSize: 22,
+    fontSize: 18,
     color: '#1D1238',
     fontWeight: '900',
     letterSpacing: 0.5,
     // marginBottom: 10,
   },
+  
 
-  
-  arrowRight: {
-    resizeMode: 'contain',
-    width: '3.5%',
+  containerAB: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // backgroundColor: 'yellow',
+    height: 75,
+    marginBottom: 10,
   },
-  
+
+  containerA: {
+    width: '35%',
+    justifyContent: 'space-between',
+    // backgroundColor: 'purple',
+    height: 75,
+  },
+
+  inputBackgroundA: {
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
+
+  containerB: {
+    width: '55%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 75,
+  },
+
+  inputBackgroundB: {
+    flexDirection: 'row',
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+    resizeMode: 'contain',
+    // justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  containerC: {
+    width: '100%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 140,
+    marginBottom: 20,
+  },
+
+  inputBackgroundC: {
+    height: '80%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
+
   headerLeft: {
     flexDirection: 'row',
     // backgroundColor: 'blue',
@@ -116,15 +149,15 @@ const styles = StyleSheet.create({
   
   containerDescription: {
     flex: 1,
-    flexDirection: 'row',
-    // backgroundColor: 'green',
+    flexDirection: 'column',
+    // backgroundColor: 'blue',
     marginLeft: 54,
     justifyContent: 'space-between',
   },
 
   containerDescriptionText: {
     flex: 1,
-    // backgroundColor: 'red',
+    //backgroundColor: 'red',
   }, 
 
   containerDescriptionAmount: {
@@ -155,7 +188,7 @@ const styles = StyleSheet.create({
   containerBottomDescription: {
     width: '100%',
     flexDirection: 'row',
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     bottom: 5,
@@ -169,22 +202,44 @@ const styles = StyleSheet.create({
   },
 
   modelDescription: {
-    color: '#8F9297',
+    fontSize: 18,
+    letterSpacing: 0.5,
+    color: '#1D1238',
+    fontWeight: '900',
+    // backgroundColor: 'yellow'
+
+  },
+
+  categoriaSelect: {
     fontSize: 15,
+    color: '#FF7B02',
+    //marginLeft: 6,
+    fontWeight: '900',
+    marginBottom: 10,
+  },
+
+
+  amountDescription: {
+    // backgroundColor: 'red',
+    fontSize: 25,
+    color: '#FF7B02',
+    fontWeight: '900',
+    // marginTop: -8,
+    // marginBottom: 5,
+    // lineHeight: 40,
   },
 
   nameModelDescription: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: '900',
     color: '#1D1238',
     marginBottom: 35,
   },
 
   subtotalDescription: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#8F9297',
     paddingTop: 17,
-    bottom: 5,
   },
 
   bottomAddRemove: {
@@ -209,11 +264,23 @@ const styles = StyleSheet.create({
     borderColor: '#1D1238',
    },
 
+
    bottomAddRemoveText: {
     color: 'white',
     fontWeight: '900',
     bottom: 1,
    },
+
+   textDescription: {
+    flex: 1,
+    width: '98%',
+    fontSize: 14,
+    letterSpacing: 0.5,
+    color: '#8F9297',
+    // backgroundColor: 'purple'
+    padding: 1,
+  },
+
 
    buttonAddCart: {
     width: '100%',
@@ -231,7 +298,7 @@ const styles = StyleSheet.create({
    },
 
    textValueAmount: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '900',
     color: '#FF7B02',
     bottom: 8,
@@ -239,34 +306,45 @@ const styles = StyleSheet.create({
     paddingRight: 10,
    },
 
-   buttonEdit: {
-    height: 20,
-    paddingHorizontal: '5%',
+   button: {
     backgroundColor: '#1D1238',
-    borderRadius: 7,
+    height: 50,
+    width: '100%',
+    fontSize: 16,
+    marginBottom: 7,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+
   },
 
-  buttonEditFont: {
-    fontSize: 10,
-    color: '#fff'
+  buttonText: {
+    fontSize: 13,
+    color: '#FFF',
+    fontWeight: 'bold'
   },
 
-  textButtonExcluir: {
-    fontSize: 10,
-    color: '#fff',
-  },
-
-  buttonExcluir: {
-    fontSize: 50,
-    height: 20,
-    paddingHorizontal: '5%',
-    backgroundColor: '#FF7B02',
-    borderRadius: 7,
+   bottonExcluir: {
+    width: 110,
+    backgroundColor: '#ffbdb9',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'red',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 5,
+    marginTop: -65,
+    marginEnd: 8,
    },
+
+    textBottonExcluir: {
+      fontSize: 12,
+      color: '#FF0909',
+    },
 
    fontButtonAddCart: {
     fontSize: 11,
@@ -284,31 +362,32 @@ const styles = StyleSheet.create({
       marginBottom: 15,
     },
 
-  headerButtons: {
+  headerBottons: {
     height: 25,
     // backgroundColor: 'red',
-    // alignItems: 'flex-end',
+    alignItems: 'flex-end',
   },
 
   buttonRegister: {
-    height: 25,
-    width: '97%',
-    backgroundColor: '#1D1238',
-    borderRadius: 10,
+    width: 105,
+    backgroundColor: '#D4F8E7',
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#1D1238',
+    borderColor: '#1FB76F',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 2,
+    paddingBottom: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: '5%',
+    marginBottom: 5,
   },
 
 
   buttonRegisterFont: {
     fontSize: 12,
-    color: '#FFF',
-    fontWeight: 'bold',
+    color: '#1FB76F'
   },
-  
   buttonCardsA: {
     flexDirection: 'row',
     width: '100%',
@@ -342,6 +421,17 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red'
   },
 
+  buttonImageEdit: {
+    // flex: 1,
+    width: '25%',
+    height: '70%',
+    marginLeft: '5%',
+    resizeMode: 'contain',
+    // backgroundColor: 'purple',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+
   buttonTexts: {
     fontWeight: '900',
     fontSize: 14,
@@ -368,7 +458,88 @@ const styles = StyleSheet.create({
   buttonSeeFont: {
     fontSize: 12,
     color: '#FF7B02'
-  }
+  },
+  title: {
+    fontSize: 19,
+    color: '#1D1238',
+    fontWeight: '900',
+    marginBottom: 2,
+    alignContent: 'center',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 12,
+    color: '#8C8C8C',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+
+  logoIcon: {
+    marginTop: 10,
+    marginBottom: 10,
+    width: 90,
+    height: 90,
+    alignSelf: 'center'
+  },
+
+  input: {
+    flex: 5,
+    height: 80,
+    padding: 12,
+    fontSize: 17,
+    letterSpacing: 0.5,
+    // backgroundColor: 'purple',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    textAlignVertical: 'top',
+    color: '#3E3E3E',
+    fontWeight: 'bold',
+  },
+
+  inputCategoria: {
+    flex: 1,
+    fontSize: 17,
+    padding: 12,
+    height: 40,
+    paddingRight: 4,
+    fontWeight: 'bold',
+    backgroundColor: '#F4F4F4',
+    color: '#3E3E3E',
+    borderRadius: 10,
+  },
+
+  input1: {
+  
+    height: 15,
+
+  },
+
+  inputTitle1: {
+    fontSize: 18,
+    color: 'red',
+    fontWeight: '900', 
+    marginTop: 0,
+    marginBottom: 8,
+    //marginLeft: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
+  popupErrorText: {
+    fontSize: 15,
+    color: '#EA4335',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#FFF',//'#EA4335',
+    marginTop: 5,
+    borderRadius: 10,
+    height: 50,
+    marginLeft: 30,
+    marginRight: 30,
+    textAlignVertical: 'center'
+  },
 
 });
 

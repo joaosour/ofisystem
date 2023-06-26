@@ -2,11 +2,10 @@ const express=require('express');
 const cors = require('cors');
 const bodyParser=require('body-parser');
 const models=require('./models');
-<<<<<<< HEAD
+
+
 const { Sequelize, where} = require('sequelize');
-=======
-const { Sequelize} = require('sequelize');
->>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
+
 
 const app=express();
 app.use(cors());
@@ -56,7 +55,7 @@ app.post('/verifyPassRegister', async(req, res)=> {
         
     });
     if(responseRegister === null){
-        res.send(JSON.stringify('Senha/Usuario do administrador não conferem!'));
+        res.send(JSON.stringify('Senha/Usuario do administrador não conferem'));
     
     }else{
                    
@@ -195,7 +194,46 @@ app.post('/cadastrarCategoria', async (req, res) => {
       }
   });
 
-<<<<<<< HEAD
+
+  app.post('/editarModelo', async (req, res) => {
+    try {
+      let existingmodeloEditar = await modelo.findOne({
+        where: { id: req.body.selectModel }
+      });
+      
+      if (existingmodeloEditar === null) {
+        res.send(JSON.stringify('Mpdelo Não Confere com o Listado Acima'));
+      } else {
+
+        if (req.body.novoModelo != null){
+          existingmodeloEditar.modelo=req.body.novoModelo;
+      } else {
+        existingmodeloEditar.modelo=existingmodeloEditar.modelo;
+      }
+      
+      if (req.body.novoValor != null){
+        existingmodeloEditar.valor=req.body.novoValor;
+
+      } else {
+        existingmodeloEditar.valor=existingmodeloEditar.valor;
+      }
+      if (req.body.novaImagemMod != null){
+        existingmodeloEditar.url_imgModel=req.body.novaImagemMod;
+      } else {
+        existingmodeloEditar.url_imgModel=existingmodeloEditar.url_imgModel;
+      }
+      
+
+          existingmodeloEditar.save();
+          res.send(JSON.stringify('Modelo Editado Com Sucesso!'));
+
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao editar o modelo' });
+    }
+  });
+
   app.get('/editarModelo', async(req, res)=>{
     try {
         const modelos = await modelo.findAll();
@@ -205,7 +243,8 @@ app.post('/cadastrarCategoria', async (req, res) => {
         console.error(error);
         res.status(500).json({ error: 'Erro ao listar as modelos.' });
       }
-  });
+
+    });
 
   app.delete('/excluirModelo', async (req, res) => {
     try {
@@ -246,11 +285,49 @@ app.post('/cadastrarCategoria', async (req, res) => {
       res.status(500).json({ error: 'Erro ao excluir a categoria!' });
     }
   });
-=======
-  
 
->>>>>>> af92c48ffe6f3d73fc00d4aab493cc175b9a942e
 
+  app.post('/editarCategoria', async (req, res) => {
+    try {
+      let existingcategoriaEditar = await categoria.findOne({
+        where: { categoria: req.body.confirmeCategoria }
+      });
+      
+      if (existingcategoriaEditar === null) {
+        res.send(JSON.stringify('Categoria Não Confere com a Listada Acima'));
+      } else {
+          if (req.body.novaCategoria != null){
+              existingcategoriaEditar.categoria=req.body.novaCategoria;
+
+              let existingCategoriaModeloEditar = await modelo.findOne({
+                where: {nomeCategoria: req.body.novaCategoria}
+              });
+              if (existingCategoriaModeloEditar != null){
+                existingCategoriaModeloEditar.nomeCategoria=req.body.novaCategoria;
+              }
+          } else {
+              existingcategoriaEditar.categoria=existingcategoriaEditar.categoria;
+          }
+          
+          if (req.body.novaDescricao != null){
+               existingcategoriaEditar.descricao=req.body.novaDescricao;
+          } else {
+            existingcategoriaEditar.descricao=existingcategoriaEditar.descricao;
+          }
+          if (req.body.novaImagemCat != null){
+            existingcategoriaEditar.url_img=req.body.novaImagemCat;
+          } else {
+            existingcategoriaEditar.url_img=existingcategoriaEditar.url_img;
+          }
+          existingcategoriaEditar.save();
+          res.send(JSON.stringify('Categoria Editada Com Sucesso!'));
+
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao excluir a categoria!' });
+    }
+  });
 
 let port=process.env.PORT || 3000;
 app.listen(port, (req, res) => {

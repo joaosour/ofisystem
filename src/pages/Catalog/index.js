@@ -46,7 +46,16 @@ export default function Catalog() {
 
   const handleVerModelos = (categoria) => {
     setCategoriaSelecionada(categoria);
-    navigation.navigate('CatalogA', {categoria: categoria.categoria});
+    navigation.navigate('CatalogA', {categoria: categoria});
+  };
+
+  const handleExcluirCategoria = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    navigation.navigate('ExclusaoCategoria', {categoriaSelecionada: categoria})
+  };
+  const handleEditarCategoria = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    navigation.navigate('EdicaoCategoria', {categoriaSelecionada: categoria})
   };
 
   return (
@@ -75,19 +84,45 @@ export default function Catalog() {
       >
         <View style={styles.smallLine}></View>
 
-        <View style={styles.headerBottons}>
-          <TouchableOpacity
+        <TouchableOpacity
           style={styles.buttonRegister}
           onPress={() => navigation.navigate('CadastroCategoria')} //cadastrar modelo
           >
-            <Text style={styles.buttonRegisterFont}>Cadastrar Categoria</Text>
-          </TouchableOpacity>
-        </View>
+            <Text style={styles.buttonRegisterFont}>CADASTRAR NOVA CATEGORIA</Text>
+        </TouchableOpacity>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           {categorias.map((categoria) => (
             <View style={styles.containerCards} key={categoria.id}>
-              <Text style={styles.titleCards}>{categoria.categoria}</Text>
+
+
+
+              <View style={styles.containerTitleCards}>
+                <Text style={styles.titleCards}>{categoria.categoria}</Text>
+                <Image style={styles.arrowRight} source={require('../../assets/arrow_right.png')}/>
+
+                  <View style={styles.containerButtons}>    
+
+                  <TouchableOpacity
+                        style={styles.buttonEdit}
+                        onPress={() => handleEditarCategoria(categoria)}
+                      >
+                        <Text style={styles.buttonEditFont}>Editar categoria</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                      style={styles.buttonExcluir}
+                      onPress={() => handleExcluirCategoria(categoria)} 
+                      >
+                    <Text style={styles.textButtonExcluir}>Excluir categoria</Text>
+                    </TouchableOpacity>
+
+                    </View>
+
+
+              </View>
+
+
               
               <View style={styles.buttonCardsA}>
                 <View style={styles.buttonCardsB}>
@@ -95,18 +130,42 @@ export default function Catalog() {
                 </View>
 
                 <View style={styles.containerDescription}>
-                  <Text style={styles.textDescription}>{categoria.descricao}</Text>
-                  <Text style={styles.modelDescription}>Modelos:</Text>
-                  <View style={styles.containerBottomDescription}>
-                    <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
-                    <TouchableOpacity
-                      style={styles.buttonSee}
-                      onPress={() => handleVerModelos(categoria)}
-                    >
-                      <Text style={styles.buttonSeeFont}>Ver</Text>
-                    </TouchableOpacity>
+
+                  <View style={styles.containerDescriptionAB}>
+
+                    <View style={styles.containerDescriptionA}>
+                      
+                      <Text style={styles.textDescription}>{categoria.descricao}</Text>
+
+                    </View>
+
+                    <View style={styles.containerDescriptionB}>
+
+                      <Text style={styles.modelDescription}>Modelos</Text>
+
+                      <View style={styles.containerAmount}>
+
+                          <Text style={styles.amountDescription}>{categoria.quantModel}</Text>
+
+
+                          <View style={styles.containerDescriptionC}>
+                            <TouchableOpacity
+                              style={styles.buttonSee}
+                              onPress={() => handleVerModelos(categoria)}
+                            >
+                              <Text style={styles.buttonSeeFont}>Ver modelos</Text>
+                             </TouchableOpacity>
+                          </View>
+
+                      </View>
+
+                    </View>
+
                   </View>
+
+
                 </View>
+
               </View>
             </View>
           ))}

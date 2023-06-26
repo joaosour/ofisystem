@@ -18,10 +18,11 @@ const styles = StyleSheet.create({
   },
 
   titleCards:{
-    fontSize: 22,
+    fontSize: 16,
     color: '#1D1238',
     fontWeight: '900',
-    marginBottom: 10,
+    marginBottom: '2%',
+    // backgroundColor: 'red',
   },
   
   headerLeft: {
@@ -153,6 +154,62 @@ const styles = StyleSheet.create({
       marginTop: 25,
       marginBottom: 15,
     },
+
+  containerAB: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // backgroundColor: 'yellow',
+    height: 75,
+    marginBottom: 10,
+  },
+
+  containerA: {
+    width: '35%',
+    justifyContent: 'space-between',
+    // backgroundColor: 'purple',
+    height: 75,
+  },
+
+  inputBackgroundA: {
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
+
+  containerB: {
+    width: '55%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 75,
+  },
+
+  inputBackgroundB: {
+    flexDirection: 'row',
+    height: '65%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+    resizeMode: 'contain',
+    // justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  containerC: {
+    width: '100%',
+    justifyContent: 'space-between',    
+    // backgroundColor: 'blue',
+    height: 140,
+    marginBottom: 20,
+  },
+
+  inputBackgroundC: {
+    height: '80%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+  },
   
   buttonCardsA: {
     flexDirection: 'row',
@@ -177,16 +234,17 @@ const styles = StyleSheet.create({
     // resizeMode: 'contain',
     justifyContent: 'center',
     alignSelf: 'center',
-    
   },
 
   buttonImage: {
-    marginLeft: 30,
-    // width: '150%',
+    // flex: 1,
+    width: '25%',
     height: '70%',
-    resizeMode: 'center'
-    // resizeMode: 'center',
-    // backgroundColor: 'red'
+    marginLeft: '5%',
+    resizeMode: 'contain',
+    // backgroundColor: 'purple',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
 
   textButtonImage: {
@@ -253,30 +311,71 @@ const styles = StyleSheet.create({
   input: {
     flex: 5,
     height: 80,
-    paddingLeft: 10,
-    paddingRight: 4,
-    // backgroundColor: 'red',
+    padding: 12,
+    fontSize: 17,
+    letterSpacing: 0.5,
+    // backgroundColor: 'purple',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    textAlignVertical: 'top',
+    color: '#3E3E3E',
+    fontWeight: 'bold',
   },
     
   inputCategoria: {
     flex: 1,
     fontSize: 17,
+    padding: 12,
     height: 40,
     paddingRight: 4,
-    fontWeight: '900',
-    // backgroundColor: 'red',
-    color: '#A2A2A2',
-    marginTop: -10,
+    fontWeight: 'bold',
+    backgroundColor: '#F4F4F4',
+    color: '#3E3E3E',
+    borderRadius: 10,
   },
+
   inputTitle1: {
     fontSize: 18,
-    color: 'red',
+    // color: 'red',
     fontWeight: '900', 
     marginTop: 0,
     marginBottom: 8,
     //marginLeft: 30,
     fontWeight: 'bold',
     textAlign: 'center'
+  },
+
+    
+  button: {
+    backgroundColor: '#1D1238',
+    height: 50,
+    width: '100%',
+    fontSize: 16,
+    marginBottom: 7,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+
+  buttonText: {
+    fontSize: 13,
+    color: '#FFF',
+    fontWeight: 'bold'
+  },
+
+  popupErrorText: {
+    fontSize: 15,
+    color: '#EA4335',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#FFF',//'#EA4335',
+    marginTop: 5,
+    borderRadius: 10,
+    height: 50,
+    marginLeft: 30,
+    marginRight: 30,
+    textAlignVertical: 'center'
   },
 
 });

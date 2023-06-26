@@ -92,67 +92,57 @@ async function sendForm2(){
             source={require('../../assets/ofisystem_logo_icon.png')}
           />
 
-          <View style={styles.containerCards}>
-           
-            <Text style={[styles.titleCards
-              ,{color: '#1D1238'
-              , fontSize: 15
-              , marginBottom: 5}]}
-            >Categoria:</Text>
-            <TextInput
-              placeholder='Digite o nome da categoria'
-              placeholderTextColor='#B1B1B1'
-              style={styles.inputCategoria}
-              multiline={true}
-              numberOfLines={1}
-              onChangeText={text=> setNovaCategoria(text)}
-            />            
-          <View style={styles.buttonCardsA}>
-              <View style={styles.buttonCardsB}>
-                <TouchableOpacity>
-                  <Image style={styles.buttonImage} source={require('../../assets/imageInsert.png')}/>
-                </TouchableOpacity>
-         
-                <TextInput
-              placeholder='Link Foto'
-              placeholderTextColor='#B1B1B1'
-              //style={styles.inputCategoria}
-              //multiline={true}
-              numberOfLines={1}
-              onChangeText={text=> setNovaImg(text)}
-            />
+          <View style={styles.containerAB}>
+
+            <View style={styles.containerA}>
+              <Text style={styles.titleCards}>Categoria</Text>
+              <View style={styles.inputBackgroundA}>
+                          <TextInput
+                          placeholder='Categoria...'
+                          placeholderTextColor='#B1B1B1'
+                          style={styles.inputCategoria}
+                          multiline={false}
+                          numberOfLines={1}
+                          onChangeText={text=> setNovaCategoria(text)}
+                        /> 
               </View>
-        <View style={styles.containerDescription}>
-          <Text style={styles.textDescription}>Descrição:</Text>
-          <TextInput
-            placeholder='Digite a descrição dessa categoria'
-            placeholderTextColor='#B1B1B1'
-            style={styles.input}
-            multiline={true}
-            numberOfLines={4}
-            onChangeText={text=>setNovaDescricao(text)}
-          />
-              
+            </View>
 
-          <View style={styles.containerBottomDescription}>
-              
+            <View style={styles.containerB}>
+              <Text style={styles.titleCards}>Imagem</Text>
+              <View style={styles.inputBackgroundB}>
+                <Image style={styles.buttonImage} source={require('../../assets/imageInsert.png')}/>
+                <TextInput
+                        style={[styles.inputCategoria, {marginLeft: 0}]}
+                        placeholder='Imagem URL'
+                        placeholderTextColor='#B1B1B1'
+                        numberOfLines={1}
+                        onChangeText={text=> setNovaImg(text)}
+                />
+              </View>
+            </View>
 
-            <Text style={styles.amountDescription}></Text>
-            <TouchableOpacity style={styles.buttonInclude} onPress={() => sendForm2()}>
-              <Text style={styles.buttonIncludeFont}>Incluir</Text>
-            </TouchableOpacity>
-            
+          </View>
+
+          <View style={styles.containerC}>
+              <Text style={styles.titleCards}>Descrição</Text>
+              <View style={styles.inputBackgroundC}>
+                  <TextInput
+                    placeholder='Descrição...'
+                    placeholderTextColor='#B1B1B1'
+                    style={styles.input}
+                    multiline={true}
+                    numberOfLines={4}
+                    onChangeText={text=>setNovaDescricao(text)}
+                  />
+              </View>
           </View>
           
-        </View>
+          <TouchableOpacity style = {styles.button} onPress={ () => sendForm2()}>
+            <Text style = {styles.buttonText}>CONCLUIR CADASTRO</Text>
+          </TouchableOpacity>
 
-            </View>
-          </View>
-                
-
-          <View>
-            <Text style={styles.inputTitle1}>{msg}</Text>
-          </View>
+            <Text style= {styles.popupErrorText}>{msg}</Text>
         </ScrollView> 
 
         </Animatable.View>

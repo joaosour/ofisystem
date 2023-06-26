@@ -15,6 +15,7 @@ const navigation = useNavigation();
 const route = useRoute();
 const [user, setUser]=useState(null);
 const [modelos, setModelos]=useState([]);
+const [modeloSelecionado, setModeloSelecionado]=useState(null);
 const [cat, setCat]=useState(null);
 const { categoria } = route.params;
 
@@ -46,6 +47,15 @@ useEffect(()=> {
   getUser();
 }, [])
 
+const handleEditarModelo = (modelo) => {
+  setModeloSelecionado(modelo);
+  navigation.navigate('EdicaoModelo', {modeloSelecionado: modelo})
+};
+
+const handleExcluirModelo = (modelo) => {
+  setModeloSelecionado(modelo);
+  navigation.navigate('ExclusaoModelo', {modeloSelecionado: modelo})
+};
 
  return (
    <View style = {styles.container}>
@@ -75,35 +85,65 @@ useEffect(()=> {
           direction='alternate'>
         <View style={styles.smallLine}></View>
 
-        <View style={styles.headerBottons}>
           <TouchableOpacity
           style={styles.buttonRegister}
           onPress={() => navigation.navigate('CadastroModelo')} //cadastrar modelo
           >
-            <Text style={styles.buttonRegisterFont}>Cadastrar Modelo</Text>
+            <Text style={styles.buttonRegisterFont}>CADASTRAR NOVO MODELO</Text>
           </TouchableOpacity>
-        </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
   {modelos
-    .filter((modelo) => modelo.nomeCategoria === categoria) // Substitua 'NomeCategoria' pelo valor desejado
+    .filter((modelo) => modelo.idCategoria === categoria.id) // Substitua 'NomeCategoria' pelo valor desejado
     .map((modelo) => (
       <View style={styles.containerCards} key={modelo.id}>
-        <Text style={styles.titleCards}>{modelo.nomeCategoria}</Text>
+
+    <View style={styles.containerTitleCards}>
+
+        <Text style={styles.titleCards}>{categoria.categoria}</Text>
+
+        <Image style={styles.arrowRight} source={require('../../assets/arrow_right.png')}/>
+
+          <View style={styles.containerButtons}>
+
+          <TouchableOpacity
+          style={styles.buttonEdit} 
+          onPress={() => handleEditarModelo(modelo)} //cadastrar modelo
+          > 
+            <Text style={styles.buttonEditFont}>Editar modelo</Text> 
+          </TouchableOpacity>
+          <TouchableOpacity
+          style={styles.buttonExcluir}
+          onPress={() => handleExcluirModelo(modelo)} 
+          >
+            <Text style={styles.textButtonExcluir}>Excluir modelo</Text>
+          </TouchableOpacity>
+
+          </View>
+
+      </View>
+
 
         <View style={styles.buttonCardsA}>
           <View style={styles.buttonCardsB}>
+           
             <Image style={styles.buttonImage} source={{uri: modelo.url_imgModel}}/>
           </View>
 
           <View style={styles.containerDescription}>
             <View style={styles.containerDescriptionText}>
               <Text style={styles.modelDescription}>Modelo</Text>
+              
               <Text style={styles.nameModelDescription}>{modelo.modelo}</Text>
-              <Text style={styles.subtotalDescription}>Valor: </Text>
+              <Text style={styles.subtotalDescription}>Valor </Text>
             </View>
 
             <View style={styles.containerDescriptionAmount}>
+            <View style={styles.headerBottons}>
+
+        </View>
+        
+            
               <Text style={styles.textValueAmount}>R$ {modelo.valor}</Text>
             </View>
           </View>
